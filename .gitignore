@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/
+bdata/.gitignore
+bdata/.mvn/
+bdata/mvnw
+bdata/mvnw.cmd
+
+
