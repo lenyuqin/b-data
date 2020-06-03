@@ -10,12 +10,12 @@ import lombok.Data;
  * (BVideoHistory)实体类
  *
  * @author lmk
- * @since 2020-06-03 10:43:35
+ * @since 2020-06-03 15:55:12
  */
 @Data
-@ApiModel("$tableInfo.comment")
+@ApiModel("搜索视频的历史")
 public class BVideoHistory  implements Serializable {
-    private static final long serialVersionUID = 255130256793871656L;
+    private static final long serialVersionUID = -23217740271573414L;
     /**
     * 视频BV号
     */
@@ -36,9 +36,9 @@ public class BVideoHistory  implements Serializable {
     private String bvTitle;
     
     /**
-    * 封面图片地址
+    * up主uuid号
     */    
-    @ApiModelProperty("封面图片地址")
-    private String bvImgAddress;
+    @ApiModelProperty("up主uuid号")
+    private String bvUpuuid;
     
 }

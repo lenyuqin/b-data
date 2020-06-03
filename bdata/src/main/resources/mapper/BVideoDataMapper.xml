@@ -14,6 +14,7 @@
         <result property="bvDmnum" column="BV_DMNUM" jdbcType="INTEGER"/>
         <result property="bvCommentnum" column="BV_COMMENTNUM" jdbcType="INTEGER"/>
         <result property="bvUpuuid" column="BV_UPUUID" jdbcType="VARCHAR"/>
+        <result property="bvTime" column="BV_TIME" jdbcType="TIMESTAMP"/>
     </resultMap>
 
 

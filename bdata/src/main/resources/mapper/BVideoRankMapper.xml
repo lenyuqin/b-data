@@ -10,6 +10,7 @@
         <result property="bvRankzone" column="BV_RANKZONE" jdbcType="INTEGER"/>
         <result property="bvRanknum" column="BV_RANKNUM" jdbcType="INTEGER"/>
         <result property="bvUpuuid" column="BV_UPUUID" jdbcType="VARCHAR"/>
+        <result property="bvTime" column="BV_TIME" jdbcType="TIMESTAMP"/>
     </resultMap>
 
 
