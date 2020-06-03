@@ -12,7 +12,6 @@
         <result property="bvSharenum" column="BV_SHARENUM" jdbcType="INTEGER"/>
         <result property="bvViewnum" column="BV_VIEWNUM" jdbcType="INTEGER"/>
         <result property="bvDmnum" column="BV_DMNUM" jdbcType="INTEGER"/>
-        <result property="bvCommentnum" column="BV_COMMENTNUM" jdbcType="INTEGER"/>
         <result property="bvUpuuid" column="BV_UPUUID" jdbcType="VARCHAR"/>
         <result property="bvTime" column="BV_TIME" jdbcType="TIMESTAMP"/>
     </resultMap>

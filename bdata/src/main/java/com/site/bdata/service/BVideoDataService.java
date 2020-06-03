@@ -1,6 +1,7 @@
 package com.site.bdata.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.site.bdata.entity.BVideoData;
 
 /**
  * (BVideoData)表服务实现类

@@ -1,36 +1,39 @@
 package com.site.bdata.datasources;
 
-import com.site.bdata.util.jsouputil;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+
+
+import com.site.bdata.util.numberUtil;
 
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * @author Programmer Li
+ *
  */
 public class bilibilihtmltest {
+    /**
+     * 点赞数193800
+     * 13.4万
+     * 12.4万
+     * 2.3万 动态 微博 QQ QQ空间 贴吧 将视频贴到博客或论坛 视频地址 复制 嵌入代码 复制 微信扫一扫分享
+     * 总播放数2216846
+     * 历史累计弹幕数13280
+     * */
     public static void main(String[] args) throws IOException {
-//        请求页面     https://www.bilibili.com/video/online.html(需要联网)
 
-        String url = "https://www.bilibili.com/video/online.html";
-//        解析页面(jsoup返回document就是document对象)
-        Document document = jsouputil.getHtmlContent(url);
-        Elements ebox = document.getElementsByClass("ebox");
-        for (Element element : ebox) {
-            System.out.println("图片地址->"+element.getElementsByTag("img").eq(0).attr("src"));
-//            String video="视频地址->"+"https:"+element.getElementsByTag("a").eq(0).attr("href");
-//            String videos = element.getElementsByTag("a").eq(0).attr("href");
-//            String[] split = videos.split("/");
-//            System.out.println("视频bv号->"+split[4]);
-            System.out.println("播放数量->"+element.getElementsByClass("play").text());
-            System.out.println("评论数->"+element.getElementsByClass("dm").text());
-            System.out.println("up主名称->"+element.getElementsByClass("author").text());
-            System.out.println("在线人数->"+element.getElementsByTag("b").text());
-        }
+//        String a="125万 动态 微博 QQ QQ空间 贴吧 将视频贴到博客或论坛 视频地址 复制 嵌入代码 复制 微信扫一扫分享";
+//        int i = a.lastIndexOf("万");
+//        System.out.println(i);
+//        String[] s = a.split(" ");
+//        System.out.println(s[0].substring(0,s[0].length()-1));
+//        String s="点赞数193800";
+//        System.out.println(s.substring(3));
 
+        String a="134";
+//        int i = a.lastIndexOf("万");
+        long numChange = numberUtil.numChange(a);
+        System.out.println(numChange);
     }
+
 }
+

@@ -1,6 +1,6 @@
 package com.site.bdata.entity;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.Date;
 import java.io.Serializable;
 import io.swagger.annotations.*;
 import lombok.Data;
@@ -9,12 +9,12 @@ import lombok.Data;
  * (BVideoData)实体类
  *
  * @author lmk
- * @since 2020-06-03 10:43:10
+ * @since 2020-06-03 16:03:05
  */
 @Data
-@ApiModel("$tableInfo.comment")
+@ApiModel("视频数据")
 public class BVideoData  implements Serializable {
-    private static final long serialVersionUID = -76709267084779772L;
+    private static final long serialVersionUID = -90297134015885810L;
     /**
     * 视频BV号
     */    
@@ -68,11 +68,18 @@ public class BVideoData  implements Serializable {
     */    
     @ApiModelProperty("弹幕数量")
     private Long bvDmnum;
+
     
     /**
-    * 评论数量
+    * up主UUID
     */    
-    @ApiModelProperty("评论数量")
-    private Long bvCommentnum;
+    @ApiModelProperty("up主UUID")
+    private String bvUpuuid;
+    
+    /**
+    * 搜索视频的时间
+    */    
+    @ApiModelProperty("搜索视频的时间")
+    private Date bvTime;
     
 }

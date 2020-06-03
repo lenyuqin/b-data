@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: myBlog
-    url: jdbc:mysql://localhost:3306/bdata?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/bdata?serverTimezone=UTC&characterEncoding=utf8&autoReconnect=true
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
@@ -52,6 +52,9 @@ spring:
         enabled: true
         login-username: admin
         login-password: z1320291471
+      connection-init-sqls: set names utf8mb4
+
+
   thymeleaf:
     cache: false
     mode: HTML

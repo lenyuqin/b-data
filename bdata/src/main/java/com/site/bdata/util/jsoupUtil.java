@@ -7,7 +7,10 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class jsouputil {
+/**
+ * @author Programmer Li
+ */
+public class jsoupUtil {
     private static String getHtmlPageResponse(String url) throws Exception {
         //请求超时时间,默认200秒
         int timeout = 20000;
