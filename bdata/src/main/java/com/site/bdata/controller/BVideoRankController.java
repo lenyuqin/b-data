@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
+
 /**
  * (BVideoRank)表控制层
  *
@@ -24,16 +26,5 @@ public class BVideoRankController {
     @Resource
     private BVideoRankService bVideoRankService;
 
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @ApiOperation(value = "根据id查询 ")
-    @GetMapping("selectOne/{id}")
-    public BVideoRank selectOne(@ApiParam(value = " ID") @PathVariable("id")  id) {
-        return this.bVideoRankService.queryById(id);
-    }
 
 }

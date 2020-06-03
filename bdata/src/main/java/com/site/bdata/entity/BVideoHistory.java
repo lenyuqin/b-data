@@ -1,5 +1,6 @@
 package com.site.bdata.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import java.io.Serializable;
 import io.swagger.annotations.*;
@@ -17,7 +18,8 @@ public class BVideoHistory  implements Serializable {
     private static final long serialVersionUID = -79438421196484439L;
     /**
     * 视频BV号
-    */    
+    */
+    @TableId
     @ApiModelProperty("视频BV号")
     private String bvNumber;
     

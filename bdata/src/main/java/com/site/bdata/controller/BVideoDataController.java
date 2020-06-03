@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
+
 /**
  * (BVideoData)表控制层
  *
@@ -24,16 +26,5 @@ public class BVideoDataController {
     @Resource
     private BVideoDataService bVideoDataService;
 
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @ApiOperation(value = "根据id查询 ")
-    @GetMapping("selectOne/{id}")
-    public BVideoData selectOne(@ApiParam(value = " ID") @PathVariable("id")  id) {
-        return this.bVideoDataService.queryById(id);
-    }
 
 }
