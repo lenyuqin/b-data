@@ -1,5 +1,6 @@
-package com.site.bdata.test;
+package com.site.bdata.datasources;
 
+import com.site.bdata.util.jsouputil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,8 +15,7 @@ public class bilibiliRank {
 
         String url = "https://www.bilibili.com/ranking";
         //        解析页面(jsoup返回document就是document对象)
-        Document document = Jsoup.parse(new URL(url), 30000);
-
+        Document document = jsouputil.getHtmlContent(url);
         Elements rank = document.getElementsByClass("rank-item");
         for (Element element : rank) {
             //标题
@@ -24,10 +24,7 @@ public class bilibiliRank {
             String viewCounts=element.getElementsByClass("data-box").eq(0).text();
             String upzhu=element.getElementsByClass("data-box").eq(2).text();
             String commentCounts=element.getElementsByClass("data-box").eq(1).text();
-
-
             String synthesisScore=element.getElementsByClass("pts").eq(0).text();
-
             System.out.println("标题=>"+title);
             System.out.println("地址=>"+href);
             System.out.println("播放量=>"+viewCounts);

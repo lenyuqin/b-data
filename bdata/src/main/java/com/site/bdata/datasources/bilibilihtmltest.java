@@ -1,4 +1,4 @@
-package com.site.bdata.test;
+package com.site.bdata.datasources;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
