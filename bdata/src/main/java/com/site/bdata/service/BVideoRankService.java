@@ -1,7 +1,5 @@
 package com.site.bdata.service;
 
-import com.site.bdata.entity.BVideoRank;
-import com.site.bdata.mapper.BVideoRankMapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

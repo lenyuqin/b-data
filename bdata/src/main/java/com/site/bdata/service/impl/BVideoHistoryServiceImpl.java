@@ -2,7 +2,6 @@ package com.site.bdata.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.site.bdata.mapper.BVideoHistoryMapper;
-import com.site.bdata.entity.BVideoHistory;
 import com.site.bdata.service.BVideoHistoryService;
 import org.springframework.stereotype.Service;
 

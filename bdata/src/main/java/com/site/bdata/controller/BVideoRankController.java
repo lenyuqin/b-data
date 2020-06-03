@@ -1,12 +1,8 @@
 package com.site.bdata.controller;
 
-import com.site.bdata.entity.BVideoRank;
 import com.site.bdata.service.BVideoRankService;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 
