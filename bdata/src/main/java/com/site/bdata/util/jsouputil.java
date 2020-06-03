@@ -9,9 +9,9 @@ import org.jsoup.nodes.Document;
 
 public class jsouputil {
     private static String getHtmlPageResponse(String url) throws Exception {
-        //请求超时时间,默认20秒
+        //请求超时时间,默认200秒
         int timeout = 20000;
-        //等待异步JS执行时间,默认20秒
+        //等待异步JS执行时间,默认200秒
         int waitForBackgroundJavaScript = 20000;
         String result = "";
         final WebClient webClient = new WebClient(BrowserVersion.CHROME);
@@ -44,7 +44,7 @@ public class jsouputil {
         return result;
     }
 
-    public static Document  getHtmlContent(String url){
+    public static Document getHtmlContent(String url){
         // 发起请求
         String content = null;
         try {
@@ -54,5 +54,11 @@ public class jsouputil {
         }
         // 解析网页 得到文档对象
         return Jsoup.parse(content);
+    }
+
+    public static void main(String[] args) {
+        Document htmlContent = getHtmlContent("https://www.bilibili.com/video/BV1Vk4y1r7qs");
+        System.out.println(htmlContent.getElementsByClass("ops").html());
+
     }
 }

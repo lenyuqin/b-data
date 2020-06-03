@@ -6,9 +6,7 @@
         <result property="bvNumber" column="BV_NUMBER" jdbcType="VARCHAR"/>
         <result property="bvUp" column="BV_UP" jdbcType="VARCHAR"/>
         <result property="bvTitle" column="BV_TITLE" jdbcType="VARCHAR"/>
-        <result property="bvScore" column="BV_SCORE" jdbcType="VARCHAR"/>
-        <result property="bvRanknum" column="BV_RANKNUM" jdbcType="INTEGER"/>
-        <result property="bvRankzone" column="BV_RANKZONE" jdbcType="INTEGER"/>
+        <result property="bvUpuuid" column="BV_UPUUID" jdbcType="VARCHAR"/>
     </resultMap>
 
 

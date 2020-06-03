@@ -13,6 +13,7 @@
         <result property="bvViewnum" column="BV_VIEWNUM" jdbcType="INTEGER"/>
         <result property="bvDmnum" column="BV_DMNUM" jdbcType="INTEGER"/>
         <result property="bvCommentnum" column="BV_COMMENTNUM" jdbcType="INTEGER"/>
+        <result property="bvUpuuid" column="BV_UPUUID" jdbcType="VARCHAR"/>
     </resultMap>
 
 

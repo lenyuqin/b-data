@@ -14,26 +14,20 @@ public class bilibiliRank {
     public static void main(String[] args) throws IOException {
 
         String url = "https://www.bilibili.com/ranking";
+        System.out.println("==========耐心等待几分钟==========");
         //        解析页面(jsoup返回document就是document对象)
         Document document = jsouputil.getHtmlContent(url);
-        Elements rank = document.getElementsByClass("rank-item");
-        for (Element element : rank) {
-            //标题
-            String title=element.getElementsByTag("img").eq(0).attr("alt");
-            String href=element.getElementsByTag("a").eq(0).attr("href");
-            String viewCounts=element.getElementsByClass("data-box").eq(0).text();
-            String upzhu=element.getElementsByClass("data-box").eq(2).text();
-            String commentCounts=element.getElementsByClass("data-box").eq(1).text();
-            String synthesisScore=element.getElementsByClass("pts").eq(0).text();
-            System.out.println("标题=>"+title);
-            System.out.println("地址=>"+href);
-            System.out.println("播放量=>"+viewCounts);
-            System.out.println("up主=>"+upzhu);
-            System.out.println("评论总数=>"+commentCounts);
-            System.out.println("综合得分=>"+synthesisScore);
-            System.out.println("==================");
-
+        for (Element element : document.select("li[class=rank-item]")) {
+            String href = element.select(".img").select("a").attr("href");
+            String title = element.select(".img").select("img").attr("alt");
+            String uphref = element.select(".detail").select("a").attr("href");
+            String upname = element.select(".detail").select("a").select("span").text();
+            System.out.println(href);
+            System.out.println(title);
+            System.out.println(uphref);
+            System.out.println(upname);
         }
+
 
 
     }
