@@ -1,5 +1,6 @@
 package com.site.bdata.mapper;
 
+import com.site.bdata.entity.BVideoRank;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
