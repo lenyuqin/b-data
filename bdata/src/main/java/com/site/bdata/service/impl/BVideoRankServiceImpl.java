@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author lmk
  * @since 2020-06-03 10:20:01
  */
-@Service("bVideoRankService")
+@Service
 public class BVideoRankServiceImpl extends ServiceImpl<BVideoRankMapper, BVideoRank> implements BVideoRankService {
 
 }
