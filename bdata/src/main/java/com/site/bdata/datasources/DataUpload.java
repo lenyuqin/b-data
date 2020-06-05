@@ -1,5 +1,7 @@
 package com.site.bdata.datasources;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.site.bdata.constants.bilibiliConstants;
 import com.site.bdata.entity.BVideoData;
 import com.site.bdata.entity.BVideoHistory;
 import com.site.bdata.entity.BVideoRank;
@@ -42,7 +44,7 @@ public class DataUpload {
         dataUpload = this;
         dataUpload.bVideoRankService = this.bVideoRankService;
         dataUpload.bVideoHistoryService = this.bVideoHistoryService;
-        dataUpload.bVideoDataService=this.bVideoDataService;
+        dataUpload.bVideoDataService = this.bVideoDataService;
         // 初使化时将已静态化的testService实例化
     }
 
@@ -62,20 +64,27 @@ public class DataUpload {
             bVideoHistory.setBvUpuuid(bVideoRank.getBvUpuuid());
             return bVideoHistory;
         }).collect(Collectors.toList());
-        for (BVideoHistory bVideoHistory : bVideoHistoryList) {
-            BVideoData bVideoData = bilibiliVideo.BVdata(bVideoHistory);
-            bVideoDataList.add(bVideoData);
-        }
-        boolean bVideoDataListflag = dataUpload.bVideoDataService.saveBatch(bVideoDataList);
-
-
-
         boolean bVideoRankListflag = dataUpload.bVideoRankService.saveBatch(bVideoRankList);
         boolean bVideoHistoryListflag = dataUpload.bVideoHistoryService.saveOrUpdateBatch(bVideoHistoryList);
-        if (bVideoRankListflag && bVideoHistoryListflag&&bVideoDataListflag) {
+        if (bVideoRankListflag && bVideoHistoryListflag) {
             log.info("===========日版数据保存成功=============");
         } else {
             log.error("===========日版数据保存失败=============");
+        }
+        //查询历史表的所有数据,并将其视频的数据记录下来
+        List<BVideoHistory> bVideoHistories = dataUpload.bVideoHistoryService.list();
+        for (BVideoHistory bVideoHistory : bVideoHistories) {
+            int bVideoDataCount = dataUpload.bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, bVideoHistory.getBvNumber()));
+            if (bVideoDataCount < bilibiliConstants.VIDEO_DATA_NUMBER) {
+                //如果大于七条的数据就不加入数据库
+                bVideoDataList.add(bilibiliVideo.BVdata(bVideoHistory));
+            }
+        }
+        boolean bVideoDataListflag = dataUpload.bVideoDataService.saveBatch(bVideoDataList);
+        if (bVideoRankListflag && bVideoHistoryListflag) {
+            log.info("===========视频数据保存成功=============");
+        } else {
+            log.error("===========视频数据保存失败=============");
         }
     }
 
