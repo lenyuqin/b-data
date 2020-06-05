@@ -3,6 +3,7 @@ package com.site.bdata;
 import cn.hutool.extra.emoji.EmojiUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.site.bdata.datasources.DataUpload;
 import com.site.bdata.datasources.bilibiliRank;
 import com.site.bdata.entity.BVideoData;
 import com.site.bdata.entity.BVideoHistory;
@@ -77,9 +78,11 @@ class BdataApplicationTests {
 
     @Test
     void testVideo() {
-        int bVideoDataCount = bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV1hz411i7cD"));
-
-        System.out.println(bVideoDataCount);
+//        int bVideoDataCount = bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV1hz411i7cD"));
+//
+//        System.out.println(bVideoDataCount);
+        DataUpload dataUpload = new DataUpload();
+        dataUpload.dailyRankDataUpLoadToSQL();
     }
 
 

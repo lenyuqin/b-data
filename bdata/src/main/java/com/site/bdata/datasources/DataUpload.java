@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -53,8 +54,12 @@ public class DataUpload {
      * 上传全站日版数据
      */
     @Async
+//    @Scheduled(cron = "0 0 12 ?")
     public void dailyRankDataUpLoadToSQL() {
         List<BVideoRank> bVideoRankList = bilibiliRank.bVideoRankArraylist(0);
+//        for (BVideoRank bVideoRank : bVideoRankList) {
+//            System.out.println(bVideoRank);
+//        }
         List<BVideoData> bVideoDataList = new ArrayList<>();
         List<BVideoHistory> bVideoHistoryList = bVideoRankList.stream().map(bVideoRank -> {
             BVideoHistory bVideoHistory = new BVideoHistory();
@@ -78,10 +83,11 @@ public class DataUpload {
             if (bVideoDataCount < bilibiliConstants.VIDEO_DATA_NUMBER) {
                 //如果大于七条的数据就不加入数据库
                 bVideoDataList.add(bilibiliVideo.BVdata(bVideoHistory));
+                log.info("==============视频=>"+bVideoHistory.getBvNumber()+"录入中=================");
             }
         }
         boolean bVideoDataListflag = dataUpload.bVideoDataService.saveBatch(bVideoDataList);
-        if (bVideoRankListflag && bVideoHistoryListflag) {
+        if (bVideoDataListflag) {
             log.info("===========视频数据保存成功=============");
         } else {
             log.error("===========视频数据保存失败=============");
