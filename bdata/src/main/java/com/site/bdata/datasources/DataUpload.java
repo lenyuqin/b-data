@@ -60,7 +60,6 @@ public class DataUpload {
 //        for (BVideoRank bVideoRank : bVideoRankList) {
 //            System.out.println(bVideoRank);
 //        }
-        List<BVideoData> bVideoDataList = new ArrayList<>();
         List<BVideoHistory> bVideoHistoryList = bVideoRankList.stream().map(bVideoRank -> {
             BVideoHistory bVideoHistory = new BVideoHistory();
             bVideoHistory.setBvNumber(bVideoRank.getBvNumber());
@@ -78,19 +77,20 @@ public class DataUpload {
         }
         //查询历史表的所有数据,并将其视频的数据记录下来
         List<BVideoHistory> bVideoHistories = dataUpload.bVideoHistoryService.list();
+        int bVideoDataflag =1;
         for (BVideoHistory bVideoHistory : bVideoHistories) {
             int bVideoDataCount = dataUpload.bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, bVideoHistory.getBvNumber()));
             if (bVideoDataCount < bilibiliConstants.VIDEO_DATA_NUMBER) {
                 //如果大于七条的数据就不加入数据库
-                bVideoDataList.add(bilibiliVideo.BVdata(bVideoHistory));
-                log.info("==============视频=>"+bVideoHistory.getBvNumber()+"录入中=================");
+                dataUpload.bVideoDataService.save(bilibiliVideo.BVdata(bVideoHistory));
+                log.info("==============第"+bVideoDataflag +"个视频=>"+bVideoHistory.getBvNumber()+"录入成功=================");
+                bVideoDataflag ++;
             }
         }
-        boolean bVideoDataListflag = dataUpload.bVideoDataService.saveBatch(bVideoDataList);
-        if (bVideoDataListflag) {
-            log.info("===========视频数据保存成功=============");
+        if (bVideoDataflag >100) {
+            log.info("===========全部视频数据保存成功=============");
         } else {
-            log.error("===========视频数据保存失败=============");
+            log.error("===========全部视频数据保存失败=============");
         }
     }
 

@@ -2,10 +2,15 @@ package com.site.bdata.util;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
+import com.gargoylesoftware.htmlunit.ScriptException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.javascript.DefaultJavaScriptErrorListener;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * @author Programmer Li
@@ -23,6 +28,9 @@ public class jsoupUtil {
         //当HTTP的状态非200时是否抛出异常
         webClient.getOptions().setThrowExceptionOnFailingStatusCode(false);
         webClient.getOptions().setActiveXNative(false);
+        // -----重点-----设置为我们自定义的错误处理类
+        webClient.setJavaScriptErrorListener(new MyJSErrorListener());
+
         //是否启用CSS
         webClient.getOptions().setCssEnabled(false);
         //很重要，启用JS
@@ -57,6 +65,35 @@ public class jsoupUtil {
         }
         // 解析网页 得到文档对象
         return Jsoup.parse(content);
+    }
+
+
+    /**
+     * 忽略html unit打印的所有js加载报错信息
+     */
+    public static class MyJSErrorListener extends DefaultJavaScriptErrorListener {
+        @Override
+        public void scriptException(HtmlPage page, ScriptException scriptException) {
+        }
+
+        @Override
+        public void timeoutError(HtmlPage page, long allowedTime, long executionTime) {
+        }
+
+        @Override
+        public void malformedScriptURL(HtmlPage page, String url, MalformedURLException malformedURLException) {
+
+        }
+
+        @Override
+        public void loadScriptError(HtmlPage page, URL scriptUrl, Exception exception) {
+
+        }
+
+        @Override
+        public void warn(String message, String sourceName, int line, String lineSource, int lineOffset) {
+
+        }
     }
 
     public static void main(String[] args) {

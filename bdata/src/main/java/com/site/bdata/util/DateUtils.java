@@ -14,4 +14,9 @@ public class DateUtils {
     public static Timestamp getLocalCurrentDate(){
         return new Timestamp(System.currentTimeMillis());
     }
+
+
+    public static void main(String[] args) {
+        System.out.println(DateUtils.getLocalCurrentDate());
+    }
 }
