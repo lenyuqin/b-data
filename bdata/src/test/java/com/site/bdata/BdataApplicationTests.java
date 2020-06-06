@@ -13,14 +13,20 @@ import com.site.bdata.service.BVideoHistoryService;
 import com.site.bdata.service.BVideoRankService;
 import com.site.bdata.util.BVStringUtil;
 import com.site.bdata.util.DateUtils;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @SpringBootTest
 class BdataApplicationTests {
 
@@ -81,8 +87,25 @@ class BdataApplicationTests {
 //        int bVideoDataCount = bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV1hz411i7cD"));
 //
 //        System.out.println(bVideoDataCount);
-        DataUpload dataUpload = new DataUpload();
-        dataUpload.dailyRankDataUpLoadToSQL();
+//        DataUpload dataUpload = new DataUpload();
+//        dataUpload.dailyRankDataUpLoadToSQL();
+        Timestamp timestamp = Timestamp.valueOf("2020-06-05 00:00:0");
+        Timestamp timestamp1 = Timestamp.valueOf("2020-06-05 23:59:59");
+        List<BVideoData> list = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().between(BVideoData::getBvTime, timestamp,timestamp1));
+        for (BVideoData bVideoData : list) {
+            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
+            log.info(bVideoData.toString());
+        }
+    }
+
+    @Test
+    void testData(){
+        List<BVideoData> bVideoDataList = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV13T4y1J7bS"));
+
+        for (BVideoData bVideoData : bVideoDataList) {
+            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
+            log.info(bVideoData.toString());
+        }
     }
 
 

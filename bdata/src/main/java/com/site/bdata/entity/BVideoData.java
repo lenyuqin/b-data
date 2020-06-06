@@ -2,6 +2,9 @@ package com.site.bdata.entity;
 
 import java.util.Date;
 import java.io.Serializable;
+
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.*;
 import lombok.Data;
 
@@ -78,7 +81,7 @@ public class BVideoData  implements Serializable {
     
     /**
     * 搜索视频的时间
-    */    
+    */
     @ApiModelProperty("搜索视频的时间")
     private Date bvTime;
     

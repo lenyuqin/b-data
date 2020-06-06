@@ -3,6 +3,7 @@ package com.site.bdata.entity;
 import java.util.Date;
 import java.io.Serializable;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.*;
@@ -72,7 +73,6 @@ public class BVideoRank  implements Serializable {
     * 搜索视频的时间
     */
     @TableField("BV_TIME")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @ApiModelProperty("搜索视频的时间")
     private Date bvTime;
     

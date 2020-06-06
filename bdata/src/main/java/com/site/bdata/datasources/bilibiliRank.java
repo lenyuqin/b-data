@@ -22,7 +22,6 @@ public class bilibiliRank {
      * //space.bilibili.com/13899470
      * 喜娃桑
      */
-
     public static List<BVideoRank> bVideoRankArraylist(Integer BvRankzone) {
 
         List<BVideoRank> bVideoRankList = new ArrayList<>();

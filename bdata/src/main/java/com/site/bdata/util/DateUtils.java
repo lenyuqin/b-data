@@ -1,6 +1,8 @@
 package com.site.bdata.util;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class DateUtils {
@@ -15,8 +17,14 @@ public class DateUtils {
         return new Timestamp(System.currentTimeMillis());
     }
 
+    public static Date formatDate(Date timestamp){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = simpleDateFormat.format(timestamp);
+        return Timestamp.valueOf(format);
+    }
+
 
     public static void main(String[] args) {
-        System.out.println(DateUtils.getLocalCurrentDate());
+
     }
 }

@@ -57,9 +57,6 @@ public class DataUpload {
 //    @Scheduled(cron = "0 0 12 ?")
     public void dailyRankDataUpLoadToSQL() {
         List<BVideoRank> bVideoRankList = bilibiliRank.bVideoRankArraylist(0);
-//        for (BVideoRank bVideoRank : bVideoRankList) {
-//            System.out.println(bVideoRank);
-//        }
         List<BVideoHistory> bVideoHistoryList = bVideoRankList.stream().map(bVideoRank -> {
             BVideoHistory bVideoHistory = new BVideoHistory();
             bVideoHistory.setBvNumber(bVideoRank.getBvNumber());

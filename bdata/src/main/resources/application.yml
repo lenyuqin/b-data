@@ -65,4 +65,3 @@ spring:
 mybatis-plus:
   type-aliases-package: com.site.bdata.entity
   mapper-locations: classpath*:mapper/*.xml
-
