@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: myBlog
-    url: jdbc:mysql://localhost:3306/bdata?serverTimezone=UTC&characterEncoding=utf8&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/bdata?serverTimezone=GMT%2B8&characterEncoding=utf8&autoReconnect=true
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
