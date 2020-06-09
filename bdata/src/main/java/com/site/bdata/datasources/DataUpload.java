@@ -1,6 +1,7 @@
 package com.site.bdata.datasources;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.site.bdata.constants.Constants;
 import com.site.bdata.constants.bilibiliConstants;
 import com.site.bdata.entity.BVideoData;
 import com.site.bdata.entity.BVideoHistory;
@@ -56,25 +57,35 @@ public class DataUpload {
     @Async
 //    @Scheduled(cron = "0 0 12 ?")
     public void dailyRankDataUpLoadToSQL() {
-        List<BVideoRank> bVideoRankList = bilibiliRank.bVideoRankArraylist(0);
-        List<BVideoHistory> bVideoHistoryList = bVideoRankList.stream().map(bVideoRank -> {
-            BVideoHistory bVideoHistory = new BVideoHistory();
-            bVideoHistory.setBvNumber(bVideoRank.getBvNumber());
-            bVideoHistory.setBvTitle(bVideoRank.getBvTitle());
-            bVideoHistory.setBvUp(bVideoRank.getBvUp());
-            bVideoHistory.setBvUpuuid(bVideoRank.getBvUpuuid());
-            return bVideoHistory;
-        }).collect(Collectors.toList());
-        boolean bVideoRankListflag = dataUpload.bVideoRankService.saveBatch(bVideoRankList);
-        boolean bVideoHistoryListflag = dataUpload.bVideoHistoryService.saveOrUpdateBatch(bVideoHistoryList);
-        if (bVideoRankListflag && bVideoHistoryListflag) {
-            log.info("===========日版数据保存成功=============");
-        } else {
-            log.error("===========日版数据保存失败=============");
+        for (Constants e : Constants.values()) {
+            List<BVideoRank> bVideoRankList = bilibiliRank.bVideoRankArraylist(e.getValue());
+            List<BVideoHistory> bVideoHistoryList = bVideoRankList.stream().map(bVideoRank -> {
+                BVideoHistory bVideoHistory = new BVideoHistory();
+                bVideoHistory.setBvNumber(bVideoRank.getBvNumber());
+                bVideoHistory.setBvTitle(bVideoRank.getBvTitle());
+                bVideoHistory.setBvUp(bVideoRank.getBvUp());
+                bVideoHistory.setBvUpuuid(bVideoRank.getBvUpuuid());
+                return bVideoHistory;
+            }).collect(Collectors.toList());
+            boolean bVideoRankListflag = dataUpload.bVideoRankService.saveBatch(bVideoRankList);
+            boolean bVideoHistoryListflag = dataUpload.bVideoHistoryService.saveOrUpdateBatch(bVideoHistoryList);
+            if (bVideoRankListflag && bVideoHistoryListflag) {
+                log.info("==========="+e.getValue()+"榜数据保存成功=============");
+            } else {
+                log.error("==========="+e.getValue()+"榜数据保存失败=============");
+            }
         }
+    }
+
+    /**
+     * 录入视频数据
+     * */
+    @Async
+    public void dailyVideoDataUpLoadToSQL(){
         //查询历史表的所有数据,并将其视频的数据记录下来
+        log.info("=================历史视频的总数有=>"+dataUpload.bVideoHistoryService.count()+"=================");
         List<BVideoHistory> bVideoHistories = dataUpload.bVideoHistoryService.list();
-        int bVideoDataflag =1;
+        int bVideoDataflag =bilibiliConstants.VIDEO_DATA_FLAG;
         for (BVideoHistory bVideoHistory : bVideoHistories) {
             int bVideoDataCount = dataUpload.bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, bVideoHistory.getBvNumber()));
             if (bVideoDataCount < bilibiliConstants.VIDEO_DATA_NUMBER) {
@@ -84,7 +95,7 @@ public class DataUpload {
                 bVideoDataflag ++;
             }
         }
-        if (bVideoDataflag >100) {
+        if (bVideoDataflag >dataUpload.bVideoHistoryService.count()) {
             log.info("===========全部视频数据保存成功=============");
         } else {
             log.error("===========全部视频数据保存失败=============");

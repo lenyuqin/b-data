@@ -1,8 +1,11 @@
 package com.site.bdata;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.extra.emoji.EmojiUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.site.bdata.constants.Constants;
+import com.site.bdata.constants.bilibiliConstants;
 import com.site.bdata.datasources.DataUpload;
 import com.site.bdata.datasources.bilibiliRank;
 import com.site.bdata.entity.BVideoData;
@@ -100,13 +103,20 @@ class BdataApplicationTests {
 
     @Test
     void testData(){
-        List<BVideoData> bVideoDataList = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV13T4y1J7bS"));
-
-        for (BVideoData bVideoData : bVideoDataList) {
-            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
-            log.info(bVideoData.toString());
-        }
+//        List<BVideoData> bVideoDataList = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV13T4y1J7bS"));
+//
+//        for (BVideoData bVideoData : bVideoDataList) {
+//            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
+//            log.info(bVideoData.toString());
+//        }
+        Timestamp dateBegin = Timestamp.valueOf(bilibiliConstants.DATE_BEGIN);
+        Timestamp dateEnd = Timestamp.valueOf(bilibiliConstants.DATE_END);
+        BVideoData bVideoDataOne = bVideoDataService.getOne(new QueryWrapper<BVideoData>()
+                .lambda().between(BVideoData::getBvTime, dateBegin, dateEnd).eq(BVideoData::getBvNumber,"BV1zz4y1R7MS"));
+        System.out.println(bVideoDataOne);
     }
+
+
 
 
 }

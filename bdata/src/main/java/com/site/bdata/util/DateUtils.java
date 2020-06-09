@@ -1,5 +1,7 @@
 package com.site.bdata.util;
 
+import com.site.bdata.constants.bilibiliConstants;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,8 +25,20 @@ public class DateUtils {
         return Timestamp.valueOf(format);
     }
 
+    public static Date formatDailyDatebegin(String date){
+        String format = date+ bilibiliConstants.DATE_BEGIN;
+        return Timestamp.valueOf(format);
+    }
+    public static Date formatDailyDateEnd(String date){
+        String format = date+ bilibiliConstants.DATE_END;
+        return Timestamp.valueOf(format);
+    }
+
+
+
+
 
     public static void main(String[] args) {
-
+        System.out.println(DateUtils.formatDailyDatebegin("2020-06-05"));
     }
 }

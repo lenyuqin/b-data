@@ -10,6 +10,7 @@
 
     <modules>
         <module>bdata</module>
+        <module>webmagic</module>
     </modules>
 
 

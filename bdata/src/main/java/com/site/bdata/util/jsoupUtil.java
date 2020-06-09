@@ -18,9 +18,9 @@ import java.net.URL;
 public class jsoupUtil {
     private static String getHtmlPageResponse(String url) throws Exception {
         //请求超时时间,默认200秒
-        int timeout = 20000;
+        int timeout = 9000;
         //等待异步JS执行时间,默认200秒
-        int waitForBackgroundJavaScript = 20000;
+        int waitForBackgroundJavaScript = 9000;
         String result = "";
         final WebClient webClient = new WebClient(BrowserVersion.CHROME);
         //当JS执行出错的时候是否抛出异常

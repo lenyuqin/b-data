@@ -1,13 +1,10 @@
 package com.site.bdata.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.site.bdata.constants.bilibiliConstants;
+
 import com.site.bdata.entity.BVideoData;
-import com.site.bdata.entity.BVideoRank;
 import com.site.bdata.service.BVideoDataService;
 import com.site.bdata.service.BVideoRankService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.Api;
 
@@ -42,7 +39,7 @@ public class BVideoDataController {
                 .list(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, bvNumber));
 //                .stream().filter(bVideoData -> {BVideoData::getBvTime}).collect(Collectors.toList());
 
-
+        
         return bVideoDataList.toString();
     }
 

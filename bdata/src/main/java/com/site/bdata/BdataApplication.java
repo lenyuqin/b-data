@@ -13,8 +13,10 @@ public class BdataApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BdataApplication.class, args);
-//        DataUpload dataUpload = new DataUpload();
+        DataUpload dataUpload = new DataUpload();
 //        dataUpload.dailyRankDataUpLoadToSQL();
+
+        dataUpload.dailyVideoDataUpLoadToSQL();
     }
 
 }
