@@ -72,11 +72,6 @@
             <version>1.10.2</version>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>4.0.0-alpha-2</version>
-        </dependency>
-        <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
             <version>2.40.0</version>
@@ -120,11 +115,6 @@
             <groupId>com.vdurmont</groupId>
             <artifactId>emoji-java</artifactId>
             <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.62</version>
         </dependency>
     </dependencies>
 

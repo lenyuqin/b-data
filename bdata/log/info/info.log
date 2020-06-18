@@ -7126,3 +7126,452 @@
 [2020-06-18 19:14:02,752][INFO ][http-nio-2333-exec-1] Initializing Servlet 'dispatcherServlet' (FrameworkServlet.java:525)
 [2020-06-18 19:14:02,757][INFO ][http-nio-2333-exec-1] Completed initialization in 5 ms (FrameworkServlet.java:547)
 [2020-06-18 19:14:04,528][INFO ][http-nio-2333-exec-10] {dataSource-1,myBlog} inited (DruidDataSource.java:1010)
+[2020-06-18 19:38:18,398][INFO ][main] Starting BdataApplication on DESKTOP-2NNLTET with PID 30348 (D:\study\b-data\bdata\target\classes started by Programmer Li in D:\study\b-data) (StartupInfoLogger.java:55)
+[2020-06-18 19:38:18,408][INFO ][main] No active profile set, falling back to default profiles: default (SpringApplication.java:651)
+[2020-06-18 19:38:19,930][INFO ][main] Tomcat initialized with port(s): 2333 (http) (TomcatWebServer.java:108)
+[2020-06-18 19:38:19,939][INFO ][main] Initializing ProtocolHandler ["http-nio-2333"] (DirectJDKLog.java:173)
+[2020-06-18 19:38:19,940][INFO ][main] Starting service [Tomcat] (DirectJDKLog.java:173)
+[2020-06-18 19:38:19,940][INFO ][main] Starting Servlet engine: [Apache Tomcat/9.0.35] (DirectJDKLog.java:173)
+[2020-06-18 19:38:20,056][INFO ][main] Initializing Spring embedded WebApplicationContext (DirectJDKLog.java:173)
+[2020-06-18 19:38:20,056][INFO ][main] Root WebApplicationContext: initialization completed in 1607 ms (ServletWebServerApplicationContext.java:284)
+[2020-06-18 19:38:20,096][INFO ][main] Servlet statViewServlet was not registered (possibly already registered?) (DynamicRegistrationBean.java:110)
+[2020-06-18 19:38:20,099][INFO ][main] Filter webStatFilter was not registered (possibly already registered?) (DynamicRegistrationBean.java:110)
+[2020-06-18 19:38:21,380][INFO ][main] Initializing ExecutorService (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:38:21,381][INFO ][main] Initializing ExecutorService 'taskExecutor' (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:38:21,398][INFO ][main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] (PropertySourcedRequestMappingHandlerMapping.java:69)
+[2020-06-18 19:38:21,835][INFO ][main] Initializing ExecutorService 'taskScheduler' (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:38:21,903][INFO ][main] Starting ProtocolHandler ["http-nio-2333"] (DirectJDKLog.java:173)
+[2020-06-18 19:38:21,924][INFO ][main] Tomcat started on port(s): 2333 (http) with context path '' (TomcatWebServer.java:220)
+[2020-06-18 19:38:21,925][INFO ][main] Context refreshed (DocumentationPluginsBootstrapper.java:160)
+[2020-06-18 19:38:21,942][INFO ][main] Found 1 custom documentation plugin(s) (DocumentationPluginsBootstrapper.java:163)
+[2020-06-18 19:38:21,968][INFO ][main] Scanning for api listing references (ApiListingReferenceScanner.java:41)
+[2020-06-18 19:38:22,095][INFO ][main] Generating unique operation named: indexUsingGET_1 (CachingOperationNameGenerator.java:40)
+[2020-06-18 19:38:22,097][INFO ][main] Generating unique operation named: indexUsingGET_2 (CachingOperationNameGenerator.java:40)
+[2020-06-18 19:38:22,125][INFO ][main] Started BdataApplication in 4.486 seconds (JVM running for 6.184) (StartupInfoLogger.java:61)
+[2020-06-18 19:38:22,129][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:38:25,220][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:38:26,656][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:38:36,602][INFO ][main] {dataSource-1,myBlog} inited (DruidDataSource.java:1010)
+[2020-06-18 19:38:37,228][INFO ][main] ===========0榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:38:37,228][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:38:38,976][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:38:40,115][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:38:50,202][INFO ][main] ===========1榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:38:50,202][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:38:51,536][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:38:52,658][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:39:02,767][INFO ][main] ===========168榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:39:02,767][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:39:04,221][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:39:05,379][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:39:15,365][INFO ][main] ===========3榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:39:15,365][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:39:17,287][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:39:18,443][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:39:28,484][INFO ][main] ===========129榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:39:28,484][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:39:30,001][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:39:31,240][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:39:41,305][INFO ][main] ===========4榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:39:41,305][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:39:42,717][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:39:43,853][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:39:53,702][INFO ][main] ===========36榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:39:53,703][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:39:55,327][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:39:56,615][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:40:06,786][INFO ][main] ===========188榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:40:06,786][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:40:08,461][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:40:09,651][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:40:19,810][INFO ][main] ===========160榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:40:19,810][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:40:21,242][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:40:22,438][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:40:32,337][INFO ][main] ===========119榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:40:32,337][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:40:33,502][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:40:34,763][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:40:44,566][INFO ][main] ===========155榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:40:44,566][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:40:45,759][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:40:46,950][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:40:56,837][INFO ][main] ===========5榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:40:56,837][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:40:58,837][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:41:00,273][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:41:10,944][INFO ][main] ===========181榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:41:10,968][INFO ][main] =================历史视频的总数有=>4064================= (DataUpload.java:86)
+[2020-06-18 19:44:46,806][INFO ][main] Starting BdataApplication on DESKTOP-2NNLTET with PID 30680 (D:\study\b-data\bdata\target\classes started by Programmer Li in D:\study\b-data) (StartupInfoLogger.java:55)
+[2020-06-18 19:44:46,813][INFO ][main] No active profile set, falling back to default profiles: default (SpringApplication.java:651)
+[2020-06-18 19:44:48,034][INFO ][main] Tomcat initialized with port(s): 2333 (http) (TomcatWebServer.java:108)
+[2020-06-18 19:44:48,042][INFO ][main] Initializing ProtocolHandler ["http-nio-2333"] (DirectJDKLog.java:173)
+[2020-06-18 19:44:48,043][INFO ][main] Starting service [Tomcat] (DirectJDKLog.java:173)
+[2020-06-18 19:44:48,043][INFO ][main] Starting Servlet engine: [Apache Tomcat/9.0.35] (DirectJDKLog.java:173)
+[2020-06-18 19:44:48,145][INFO ][main] Initializing Spring embedded WebApplicationContext (DirectJDKLog.java:173)
+[2020-06-18 19:44:48,145][INFO ][main] Root WebApplicationContext: initialization completed in 1303 ms (ServletWebServerApplicationContext.java:284)
+[2020-06-18 19:44:48,183][INFO ][main] Servlet statViewServlet was not registered (possibly already registered?) (DynamicRegistrationBean.java:110)
+[2020-06-18 19:44:48,186][INFO ][main] Filter webStatFilter was not registered (possibly already registered?) (DynamicRegistrationBean.java:110)
+[2020-06-18 19:44:49,339][INFO ][main] Initializing ExecutorService (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:44:49,340][INFO ][main] Initializing ExecutorService 'taskExecutor' (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:44:49,355][INFO ][main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] (PropertySourcedRequestMappingHandlerMapping.java:69)
+[2020-06-18 19:44:49,761][INFO ][main] Initializing ExecutorService 'taskScheduler' (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:44:49,822][INFO ][main] Starting ProtocolHandler ["http-nio-2333"] (DirectJDKLog.java:173)
+[2020-06-18 19:44:49,842][INFO ][main] Tomcat started on port(s): 2333 (http) with context path '' (TomcatWebServer.java:220)
+[2020-06-18 19:44:49,843][INFO ][main] Context refreshed (DocumentationPluginsBootstrapper.java:160)
+[2020-06-18 19:44:49,859][INFO ][main] Found 1 custom documentation plugin(s) (DocumentationPluginsBootstrapper.java:163)
+[2020-06-18 19:44:49,882][INFO ][main] Scanning for api listing references (ApiListingReferenceScanner.java:41)
+[2020-06-18 19:44:49,994][INFO ][main] Generating unique operation named: indexUsingGET_1 (CachingOperationNameGenerator.java:40)
+[2020-06-18 19:44:49,996][INFO ][main] Generating unique operation named: indexUsingGET_2 (CachingOperationNameGenerator.java:40)
+[2020-06-18 19:44:50,018][INFO ][main] Started BdataApplication in 3.774 seconds (JVM running for 4.911) (StartupInfoLogger.java:61)
+[2020-06-18 19:44:50,021][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:44:52,789][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:44:54,100][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:45:04,329][INFO ][main] {dataSource-1,myBlog} inited (DruidDataSource.java:1010)
+[2020-06-18 19:45:04,738][INFO ][main] ===========0榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:45:04,738][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:45:06,434][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:45:07,863][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:45:17,644][INFO ][main] ===========1榜数据保存成功============= (DataUpload.java:73)
+[2020-06-18 19:45:17,645][INFO ][main] ==========耐心等待几分钟========== (bilibiliRank.java:29)
+[2020-06-18 19:45:19,700][INFO ][main] %c
+                     //
+         \\         //
+          \\       //
+    ##DDDDDDDDDDDDDDDDDDDDDD##
+    ## DDDDDDDDDDDDDDDDDDDD ##   ________   ___   ___        ___   ________   ___   ___        ___
+    ## hh                hh ##   |\   __  \ |\  \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \
+    ## hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \
+    ## hh   //      \\   hh ##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ \  \     \ \  \
+    ## hh                hh ##     \ \  \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  \
+    ## hh      wwww      hh ##      \ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\
+    ## hh                hh ##       \|_______| \|__| \|_______| \|__| \|_______| \|__| \|_______| \|__|
+    ## MMMMMMMMMMMMMMMMMMMM ##
+    ##MMMMMMMMMMMMMMMMMMMMMM##                             Release 2.6.1. Powered by jinkela-core 2.5.4.
+         \/            \/ color:#00a1d6 (WebConsole.java:422)
+[2020-06-18 19:45:20,886][INFO ][main] Re-synchronized call to https://cm.bilibili.com/cm/api/apidata/pc (NicelyResynchronizingAjaxController.java:63)
+[2020-06-18 19:45:44,403][INFO ][main] Starting BdataApplication on DESKTOP-2NNLTET with PID 24296 (D:\study\b-data\bdata\target\classes started by Programmer Li in D:\study\b-data) (StartupInfoLogger.java:55)
+[2020-06-18 19:45:44,409][INFO ][main] No active profile set, falling back to default profiles: default (SpringApplication.java:651)
+[2020-06-18 19:45:45,614][INFO ][main] Tomcat initialized with port(s): 2333 (http) (TomcatWebServer.java:108)
+[2020-06-18 19:45:45,621][INFO ][main] Initializing ProtocolHandler ["http-nio-2333"] (DirectJDKLog.java:173)
+[2020-06-18 19:45:45,622][INFO ][main] Starting service [Tomcat] (DirectJDKLog.java:173)
+[2020-06-18 19:45:45,622][INFO ][main] Starting Servlet engine: [Apache Tomcat/9.0.35] (DirectJDKLog.java:173)
+[2020-06-18 19:45:45,726][INFO ][main] Initializing Spring embedded WebApplicationContext (DirectJDKLog.java:173)
+[2020-06-18 19:45:45,726][INFO ][main] Root WebApplicationContext: initialization completed in 1283 ms (ServletWebServerApplicationContext.java:284)
+[2020-06-18 19:45:45,759][INFO ][main] Servlet statViewServlet was not registered (possibly already registered?) (DynamicRegistrationBean.java:110)
+[2020-06-18 19:45:45,762][INFO ][main] Filter webStatFilter was not registered (possibly already registered?) (DynamicRegistrationBean.java:110)
+[2020-06-18 19:45:46,848][INFO ][main] Initializing ExecutorService (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:45:46,849][INFO ][main] Initializing ExecutorService 'taskExecutor' (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:45:46,863][INFO ][main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)] (PropertySourcedRequestMappingHandlerMapping.java:69)
+[2020-06-18 19:45:47,229][INFO ][main] Initializing ExecutorService 'taskScheduler' (ExecutorConfigurationSupport.java:181)
+[2020-06-18 19:45:47,287][INFO ][main] Starting ProtocolHandler ["http-nio-2333"] (DirectJDKLog.java:173)
+[2020-06-18 19:45:47,310][INFO ][main] Tomcat started on port(s): 2333 (http) with context path '' (TomcatWebServer.java:220)
+[2020-06-18 19:45:47,311][INFO ][main] Context refreshed (DocumentationPluginsBootstrapper.java:160)
+[2020-06-18 19:45:47,334][INFO ][main] Found 1 custom documentation plugin(s) (DocumentationPluginsBootstrapper.java:163)
+[2020-06-18 19:45:47,354][INFO ][main] Scanning for api listing references (ApiListingReferenceScanner.java:41)
+[2020-06-18 19:45:47,461][INFO ][main] Generating unique operation named: indexUsingGET_1 (CachingOperationNameGenerator.java:40)
+[2020-06-18 19:45:47,464][INFO ][main] Generating unique operation named: indexUsingGET_2 (CachingOperationNameGenerator.java:40)
+[2020-06-18 19:45:47,485][INFO ][main] Started BdataApplication in 3.629 seconds (JVM running for 4.68) (StartupInfoLogger.java:61)
+[2020-06-18 19:45:47,554][INFO ][main] {dataSource-1,myBlog} inited (DruidDataSource.java:1010)
+[2020-06-18 19:45:47,792][INFO ][main] =================历史视频的总数有=>4064================= (DataUpload.java:86)
+[2020-06-18 19:45:48,174][INFO ][main] ==============第1个视频=>BV115411W7uB录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:48,328][INFO ][main] ==============第2个视频=>BV115411p7Wq录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:48,485][INFO ][main] ==============第3个视频=>BV115411p7rp录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:48,646][INFO ][main] ==============第4个视频=>BV1154y1B7fH录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:48,802][INFO ][main] ==============第5个视频=>BV1154y1B7st录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:48,951][INFO ][main] ==============第6个视频=>BV117411d7fo录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,064][INFO ][main] ==============第7个视频=>BV117411f7cF录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,219][INFO ][main] ==============第8个视频=>BV11A411q7Si录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,319][INFO ][main] ==============第9个视频=>BV11A411q7X8录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,438][INFO ][main] ==============第10个视频=>BV11A411q7v6录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,593][INFO ][main] ==============第11个视频=>BV11C4y1a7pd录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,744][INFO ][main] ==============第12个视频=>BV11D4y1D7iF录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:49,908][INFO ][main] ==============第13个视频=>BV11E411k76T录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:50,114][INFO ][main] ==============第14个视频=>BV11K4y1x7Ky录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:50,268][INFO ][main] ==============第15个视频=>BV11Q4y1A7nq录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:50,418][INFO ][main] ==============第16个视频=>BV11Q4y1P7bG录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:50,577][INFO ][main] ==============第17个视频=>BV11Q4y1P7bz录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:50,731][INFO ][main] ==============第18个视频=>BV11T4y1E7WW录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:50,879][INFO ][main] ==============第19个视频=>BV11T4y1J7RU录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,031][INFO ][main] ==============第20个视频=>BV11V411r767录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,179][INFO ][main] ==============第21个视频=>BV11Z4y1H7CF录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,334][INFO ][main] ==============第22个视频=>BV11f4y1277s录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,485][INFO ][main] ==============第23个视频=>BV11f4y127AC录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,654][INFO ][main] ==============第24个视频=>BV11f4y127Vw录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,810][INFO ][main] ==============第25个视频=>BV11f4y127qD录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:51,978][INFO ][main] ==============第26个视频=>BV11f4y127sD录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,092][INFO ][main] ==============第27个视频=>BV11f4y1y7uR录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,242][INFO ][main] ==============第28个视频=>BV11g4y1B7mP录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,358][INFO ][main] ==============第29个视频=>BV11g4y1i7nQ录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,466][INFO ][main] ==============第30个视频=>BV11p4y1D7tb录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,629][INFO ][main] ==============第31个视频=>BV11t4y1X7g4录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,781][INFO ][main] ==============第32个视频=>BV11v411z7f7录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:52,931][INFO ][main] ==============第33个视频=>BV11v411z7vd录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,039][INFO ][main] ==============第34个视频=>BV11x411a72p录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,193][INFO ][main] ==============第35个视频=>BV11z411i7Fu录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,376][INFO ][main] ==============第36个视频=>BV11z411i7Xo录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,537][INFO ][main] ==============第37个视频=>BV11z4y197Yb录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,686][INFO ][main] ==============第38个视频=>BV11z4y197sm录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,838][INFO ][main] ==============第39个视频=>BV125411W7QG录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:53,986][INFO ][main] ==============第40个视频=>BV125411p73M录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:54,140][INFO ][main] ==============第41个视频=>BV1254y1B7xw录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:54,282][INFO ][main] ==============第42个视频=>BV12A411q7XU录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:54,437][INFO ][main] ==============第43个视频=>BV12A411q7pA录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:54,588][INFO ][main] ==============第44个视频=>BV12A411q7rz录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:54,696][INFO ][main] ==============第45个视频=>BV12C4y1a7GH录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:54,850][INFO ][main] ==============第46个视频=>BV12D4y1D7Wm录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:55,010][INFO ][main] ==============第47个视频=>BV12E411J72Y录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:55,406][INFO ][main] ==============第48个视频=>BV12K411p7Dq录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:55,514][INFO ][main] ==============第49个视频=>BV12K411p7wa录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:55,690][INFO ][main] ==============第50个视频=>BV12K4y1x7U3录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:55,802][INFO ][main] ==============第51个视频=>BV12Q4y1P74z录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:55,958][INFO ][main] ==============第52个视频=>BV12Q4y1P77b录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,148][INFO ][main] ==============第53个视频=>BV12Q4y1P7ZY录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,261][INFO ][main] ==============第54个视频=>BV12Q4y1P7fR录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,411][INFO ][main] ==============第55个视频=>BV12Q4y1P7po录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,562][INFO ][main] ==============第56个视频=>BV12T4y1u7mu录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,660][INFO ][main] ==============第57个视频=>BV12V411r77u录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,776][INFO ][main] ==============第58个视频=>BV12V411r7Ph录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:56,922][INFO ][main] ==============第59个视频=>BV12V411r7Sa录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:57,079][INFO ][main] ==============第60个视频=>BV12V411r7yJ录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:57,239][INFO ][main] ==============第61个视频=>BV12Z4y1H7Ah录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:57,391][INFO ][main] ==============第62个视频=>BV12Z4y1H7d8录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:57,546][INFO ][main] ==============第63个视频=>BV12Z4y1H7ir录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:57,698][INFO ][main] ==============第64个视频=>BV12a4y1e7RB录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:57,853][INFO ][main] ==============第65个视频=>BV12f4y1272j录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,011][INFO ][main] ==============第66个视频=>BV12f4y127Wk录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,126][INFO ][main] ==============第67个视频=>BV12f4y127vM录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,285][INFO ][main] ==============第68个视频=>BV12f4y1y7BY录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,460][INFO ][main] ==============第69个视频=>BV12f4y1y7Yh录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,612][INFO ][main] ==============第70个视频=>BV12g4y1i7Km录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,765][INFO ][main] ==============第71个视频=>BV12g4y1i7dD录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:58,917][INFO ][main] ==============第72个视频=>BV12g4y1i7nQ录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,084][INFO ][main] ==============第73个视频=>BV12i4y1s74C录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,232][INFO ][main] ==============第74个视频=>BV12k4y1B77R录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,380][INFO ][main] ==============第75个视频=>BV12k4y1B7AE录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,534][INFO ][main] ==============第76个视频=>BV12k4y1B7jU录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,644][INFO ][main] ==============第77个视频=>BV12k4y1z71D录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,793][INFO ][main] ==============第78个视频=>BV12k4y1z7pr录入成功================= (DataUpload.java:94)
+[2020-06-18 19:45:59,951][INFO ][main] ==============第79个视频=>BV12p4y1S7o1录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,060][INFO ][main] ==============第80个视频=>BV12t4y1X73Q录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,213][INFO ][main] ==============第81个视频=>BV12v411z7Zw录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,378][INFO ][main] ==============第82个视频=>BV12z411i7G7录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,529][INFO ][main] ==============第83个视频=>BV12z4y197a3录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,677][INFO ][main] ==============第84个视频=>BV12z4y197pz录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,832][INFO ][main] ==============第85个视频=>BV12z4y1Q7jz录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:00,981][INFO ][main] ==============第86个视频=>BV12z4y1Q7vx录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:01,130][INFO ][main] ==============第87个视频=>BV12z4y1R7Cf录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:01,285][INFO ][main] ==============第88个视频=>BV135411W72e录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:01,437][INFO ][main] ==============第89个视频=>BV135411W7Eq录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:01,599][INFO ][main] ==============第90个视频=>BV137411K7V1录入成功================= (DataUpload.java:94)
+[2020-06-18 19:46:01,751][INFO ][main] ==============第91个视频=>BV13A411B7rL录入成功================= (DataUpload.java:94)

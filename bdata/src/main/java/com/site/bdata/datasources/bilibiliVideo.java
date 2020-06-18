@@ -62,8 +62,8 @@ public class bilibiliVideo {
          * */
 
         //先查询是否有当天的信息,有的话就直接返回这个对象,没有再去查找
-        Timestamp dateBegin = Timestamp.valueOf(bilibiliConstants.DATE_BEGIN);
-        Timestamp dateEnd = Timestamp.valueOf(bilibiliConstants.DATE_END);
+        Timestamp dateBegin = Timestamp.valueOf(bilibiliConstants.TODAY_DATE_BEGIN);
+        Timestamp dateEnd = Timestamp.valueOf(bilibiliConstants.TODAY_DATE_END);
         List<BVideoData> list = dataUpload.bVideoDataService.list(new QueryWrapper<BVideoData>()
                 .lambda().between(BVideoData::getBvTime, dateBegin, dateEnd).eq(BVideoData::getBvNumber, bVideoHistory.getBvNumber()));
 //        先查询是否有当天的记录,有的话就不用查询了

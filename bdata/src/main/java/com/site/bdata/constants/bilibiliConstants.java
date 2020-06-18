@@ -33,6 +33,8 @@ public interface bilibiliConstants {
      */
     String DATE_BEGIN =" 00:00:0";
     String DATE_END =" 23:59:59";
+    String TODAY_DATE_END = DateUtil.today()+" 23:59:59";
+    String TODAY_DATE_BEGIN =DateUtil.today()+" 00:00:0";
     String FORMAT="yyyy-MM-dd";
 
 }

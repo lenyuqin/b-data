@@ -95,11 +95,7 @@ public class DataUpload {
                 bVideoDataflag ++;
             }
         }
-        if (bVideoDataflag >dataUpload.bVideoHistoryService.count()) {
-            log.info("===========全部视频数据保存成功=============");
-        } else {
-            log.error("===========全部视频数据保存失败=============");
-        }
+       log.info("================全部数据保存成功=================");
     }
 
 

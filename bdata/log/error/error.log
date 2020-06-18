@@ -7283,3 +7283,5 @@ java.lang.IllegalArgumentException: Timestamp format must be yyyy-mm-dd hh:mm:ss
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
 	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2020-06-18 19:45:49,313][ERROR][main] ================BV11A411q7X8视频不存在================ (bilibiliVideo.java:89)
+[2020-06-18 19:45:56,654][ERROR][main] ================BV12V411r77u视频不存在================ (bilibiliVideo.java:89)

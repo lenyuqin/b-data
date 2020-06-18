@@ -3,7 +3,6 @@ package com.site.bdata.entity;
 import java.util.Date;
 import java.io.Serializable;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.*;
 import lombok.Data;
