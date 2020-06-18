@@ -83,6 +83,7 @@ public class BVideoData  implements Serializable {
     * 搜索视频的时间
     */
     @ApiModelProperty("搜索视频的时间")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date bvTime;
     
 }

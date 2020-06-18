@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="x-admin-sm">
+<head>
+    <meta charset="UTF-8">
+    <title>b-data</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" th:href="@{/x-data/css/font.css}">
+    <link rel="stylesheet" th:href="@{/x-data/css/xadmin.css}">
+    <script type="text/javascript" th:src="@{/x-data/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/x-data/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/x-data/js/xadmin.js}"></script>
+    <script type="text/javascript" th:src="@{/x-data/js/xm-select.js}"></script>
+    <!--    &lt;!&ndash;[if lt IE 9]>-->
+    <script th:src="@{https://cdn.staticfile.org/html5shiv/r29/html5.min.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js}"></script>
+    <!--    <![endif]&ndash;&gt;-->
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+
+
+                    <form class="layui-form layui-col-space5">
+                        <div class="layui-col-md2 layui-show-xs-block">
+                            <select class="layui-select" name="bvRankzone" lay-verify="required">
+                                <option value="">请选择一个分区</option>
+                                <option value="0">全站</option>
+                                <option value="1">动画</option>
+                                <option value="3">音乐</option>
+                                <option value="4">游戏</option>
+                                <option value="5">娱乐</option>
+                                <option value="168">国创相关</option>
+                                <option value="126">舞蹈</option>
+                                <option value="36">舞蹈</option>
+                                <option value="188">数码</option>
+                                <option value="160">生活</option>
+                                <option value="119">鬼畜</option>
+                                <option value="155">时尚</option>
+                                <option value="181">影视</option>
+                            </select>
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <input class="layui-input" autocomplete="off" placeholder="时间" name="bvTime" id="bvTime">
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="search_btn">
+                                <i class="layui-icon">&#xe615;</i></button>
+                        </div>
+                        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+                           onclick="location.reload()" title="刷新">
+                            <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
+                    </form>
+                </div>
+
+
+                <div class="layui-card-body layui-table-body layui-table-main">
+                    <table class="layui-table layui-form" id="ranktable" lay-filter="ranktable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="check" onclick="xadmin.open('表格数据','/welcome1')">查看</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="view">视频</a>
+</script>
+<script type="text/javascript" th:inline="none">
+
+    layui.use(['form', 'layer', 'table', 'laydate'], function () {
+        let form = layui.form,
+            layer = layui.layer,
+            $ = layui.jquery,
+            laydate = layui.laydate,
+            table = layui.table;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#bvTime' //指定元素
+        });
+
+        form.on('submit(search_btn)', function (data) {
+            var datas = data.field;
+            console.log(datas);
+            tableIns.reload({
+                where: data.field
+                , page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+            return false;
+        });
+
+        let tableIns = table.render({
+            elem: '#ranktable'
+            , id: "allranklist"
+            , height: "full-110"
+            , url: '/allRank/list'
+            , title: '排行榜'
+            , page: true
+            , toolbar: true
+            , totalRow: true
+            , limits: [10]
+            , cols: [[
+                {field: 'bvRanknum', title: '排名', unresize: "true", align: 'center', sort: true}
+                , {field: 'bvTitle', title: '视频标题', unresize: "true", align: 'center'}
+                , {field: 'bvUp', title: 'up主名字', unresize: "true", align: 'center'}
+                , {field: 'bvNumber', title: '视频BV号', unresize: "true", align: 'center'}
+                , {field: 'bvUpuuid', title: 'UP主UUID', align: 'center', unresize: "true"}
+                , {field: 'bvScore', title: '视频综合得分', align: 'center', unresize: "true", sort: true}
+                , {field: 'bvTime', title: '时间', align: 'center', unresize: "true"}
+                , {fixed: 'right', unresize: "true", align: 'center', toolbar: '#barDemo'}
+            ]]
+        });
+
+        //监听工具条
+        table.on('tool(ranktable)', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'check') {
+                localStorage.setItem("bvNumber", data.bvNumber);
+            } else if (obj.event === 'view') {
+                window.open("https://www.bilibili.com/video/" + data.bvNumber);
+            }
+        });
+    });
+
+
+</script>
+
+</html>

@@ -73,6 +73,7 @@ public class BVideoRank  implements Serializable {
     * 搜索视频的时间
     */
     @TableField("BV_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @ApiModelProperty("搜索视频的时间")
     private Date bvTime;
     

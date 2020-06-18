@@ -1,13 +1,19 @@
 package com.site.bdata;
 
+import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.extra.emoji.EmojiUtil;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.site.bdata.constants.Constants;
 import com.site.bdata.constants.bilibiliConstants;
 import com.site.bdata.datasources.DataUpload;
 import com.site.bdata.datasources.bilibiliRank;
+import com.site.bdata.dto.AjaxResultPage;
 import com.site.bdata.entity.BVideoData;
 import com.site.bdata.entity.BVideoHistory;
 import com.site.bdata.entity.BVideoRank;
@@ -94,29 +100,60 @@ class BdataApplicationTests {
 //        dataUpload.dailyRankDataUpLoadToSQL();
         Timestamp timestamp = Timestamp.valueOf("2020-06-05 00:00:0");
         Timestamp timestamp1 = Timestamp.valueOf("2020-06-05 23:59:59");
-        List<BVideoData> list = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().between(BVideoData::getBvTime, timestamp,timestamp1));
-        for (BVideoData bVideoData : list) {
-            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
-            log.info(bVideoData.toString());
-        }
+        List<BVideoData> list = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().between(BVideoData::getBvTime, timestamp, timestamp1));
+        AjaxResultPage<BVideoData> ajaxResultPage = new AjaxResultPage<>();
+        ajaxResultPage.setMsg("hello");
+        ajaxResultPage.setCode(0);
+        ajaxResultPage.setData(list);
+
+        JSONObject jsonObject = JSONUtil.parseObj(ajaxResultPage);
+        jsonObject.get("data");
+        System.out.println();
+
+
+//        System.out.println(jsonObject);
+//        Object o = jsonObject.getJSONObject("data").get("bvNumber");
+//        System.out.println(o);
+
     }
 
     @Test
-    void testData(){
-//        List<BVideoData> bVideoDataList = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV13T4y1J7bS"));
-//
-//        for (BVideoData bVideoData : bVideoDataList) {
-//            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
-//            log.info(bVideoData.toString());
-//        }
+    void testData() {
+        List<BVideoData> bVideoDataList = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, "BV13T4y1J7bS"));
+
+        for (BVideoData bVideoData : bVideoDataList) {
+            bVideoData.setBvTime(DateUtils.formatDate(bVideoData.getBvTime()));
+            log.info(bVideoData.toString());
+        }
         Timestamp dateBegin = Timestamp.valueOf(bilibiliConstants.DATE_BEGIN);
         Timestamp dateEnd = Timestamp.valueOf(bilibiliConstants.DATE_END);
         BVideoData bVideoDataOne = bVideoDataService.getOne(new QueryWrapper<BVideoData>()
-                .lambda().between(BVideoData::getBvTime, dateBegin, dateEnd).eq(BVideoData::getBvNumber,"BV1zz4y1R7MS"));
+                .lambda().between(BVideoData::getBvTime, dateBegin, dateEnd).eq(BVideoData::getBvNumber, "BV1zz4y1R7MS"));
         System.out.println(bVideoDataOne);
     }
 
+    /**
+     * 测试修改集合元素的值
+     */
+    @Test
+    void testList() {
+        Page<BVideoRank> pagenum = new Page<>(1, 10);
+//        DateTime date = DateUtil.date();
+        String format="yyyy-MM-dd";
 
+
+
+        List<BVideoRank> records = bVideoRankService.page(pagenum, new QueryWrapper<BVideoRank>()
+                .lambda().eq(BVideoRank::getBvRankzone, 0)).getRecords();
+        records.forEach(item -> {
+            item.setBvTime(DateUtil.parse(DateUtil.format(item.getBvTime(),format)));
+        });
+
+        for (BVideoRank record : records) {
+            System.out.println(record);
+        }
+
+    }
 
 
 }

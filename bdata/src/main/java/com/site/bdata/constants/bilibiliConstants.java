@@ -31,7 +31,8 @@ public interface bilibiliConstants {
     /**
      * 时间查询时出现的问题:前端返回数据为"2020-06-05" 要在后面加上这两个词尾,就可以实现按天查询(用的是between)
      */
-    String DATE_BEGIN = DateUtil.today() + " 00:00:0";
-    String DATE_END = DateUtil.today() + " 23:59:59";
+    String DATE_BEGIN =" 00:00:0";
+    String DATE_END =" 23:59:59";
+    String FORMAT="yyyy-MM-dd";
 
 }
