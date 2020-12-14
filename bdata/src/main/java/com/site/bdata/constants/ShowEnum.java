@@ -12,6 +12,9 @@ public class ShowEnum {
 //        for (Constants e : Constants.values()) {
 //            System.out.println(e.getValue());
 //        }
-        System.out.println(bilibiliConstants.RANK_URL_PREFIX +LeaderboardTypeConstants.ALL.getValue()+"/"+ 1 + bilibiliConstants.RANK_URL_SUFFIX);
+//        System.out.println(bilibiliConstants.RANK_URL_PREFIX +LeaderboardTypeConstants.ALL.getValue()+"/"+ 1 + bilibiliConstants.RANK_URL_SUFFIX);
+
+        System.out.println(System.currentTimeMillis());
+
     }
 }

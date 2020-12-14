@@ -25,11 +25,11 @@ import java.util.stream.Collectors;
 
 /**
  * @author Programmer Li
+ *
+ * 将不用这种方式爬取数据，直接在类文件当中实现数据爬取和数据存储的问题
  */
 @Slf4j
 @Component
-@EnableScheduling
-@EnableAsync
 public class DataUpload {
 
     @Resource
@@ -54,8 +54,6 @@ public class DataUpload {
     /**
      * 上传全站日版数据
      */
-    @Async
-//    @Scheduled(cron = "0 0 12 ?")
     public void dailyRankDataUpLoadToSQL() {
         for (Constants e : Constants.values()) {
             List<BVideoRank> bVideoRankList = bilibiliRank.bVideoRankArraylist(e.getValue());
@@ -70,32 +68,50 @@ public class DataUpload {
             boolean bVideoRankListflag = dataUpload.bVideoRankService.saveBatch(bVideoRankList);
             boolean bVideoHistoryListflag = dataUpload.bVideoHistoryService.saveOrUpdateBatch(bVideoHistoryList);
             if (bVideoRankListflag && bVideoHistoryListflag) {
-                log.info("==========="+e.getValue()+"榜数据保存成功=============");
+                log.info("===========" + e.getValue() + "榜数据保存成功=============");
             } else {
-                log.error("==========="+e.getValue()+"榜数据保存失败=============");
+                log.error("===========" + e.getValue() + "榜数据保存失败=============");
             }
         }
     }
 
     /**
      * 录入视频数据
-     * */
-    @Async
-    public void dailyVideoDataUpLoadToSQL(){
+     */
+    public void dailyVideoDataUpLoadToSQL() {
         //查询历史表的所有数据,并将其视频的数据记录下来
-        log.info("=================历史视频的总数有=>"+dataUpload.bVideoHistoryService.count()+"=================");
+        log.info("=================历史视频的总数有=>" + dataUpload.bVideoHistoryService.count() + "=================");
         List<BVideoHistory> bVideoHistories = dataUpload.bVideoHistoryService.list();
-        int bVideoDataflag =bilibiliConstants.VIDEO_DATA_FLAG;
+        int bVideoDataflag = bilibiliConstants.VIDEO_DATA_FLAG;
         for (BVideoHistory bVideoHistory : bVideoHistories) {
-            int bVideoDataCount = dataUpload.bVideoDataService.count(new QueryWrapper<BVideoData>().lambda().eq(BVideoData::getBvNumber, bVideoHistory.getBvNumber()));
+            int bVideoDataCount = dataUpload.bVideoDataService.count(new QueryWrapper<BVideoData>()
+                    .lambda().eq(BVideoData::getBvNumber, bVideoHistory.getBvNumber()));
             if (bVideoDataCount < bilibiliConstants.VIDEO_DATA_NUMBER) {
                 //如果大于七条的数据就不加入数据库
                 dataUpload.bVideoDataService.save(bilibiliVideo.BVdata(bVideoHistory));
-                log.info("==============第"+bVideoDataflag +"个视频=>"+bVideoHistory.getBvNumber()+"录入成功=================");
-                bVideoDataflag ++;
+                log.info("==============第" + bVideoDataflag + "个视频=>" + bVideoHistory.getBvNumber() + "录入成功=================");
+                bVideoDataflag++;
             }
         }
-       log.info("================全部数据保存成功=================");
+        log.info("================全部数据保存成功=================");
+    }
+
+    /**
+     * 录入排行榜的视频数据，不需要再去爬取每一个视频的数据了
+     * 因为这里是用接口的数据区录入的，所以效率极高，但是！！！视频作者的数据还是要一个一个的爬取，不然获取不了
+     */
+    public void dailyVideoDataUpLoad() {
+        bilibiliRank bilibiliRank = new bilibiliRank();
+        bilibiliRank.getVideoRanklist();
+        log.info("所有排行榜数据爬取成功");
+    }
+
+
+    /**
+     * 录入作者的信息数据
+     */
+    public void upLoadAuthorData() {
+
     }
 
 

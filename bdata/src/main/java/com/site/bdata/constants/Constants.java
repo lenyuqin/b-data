@@ -1,5 +1,11 @@
 package com.site.bdata.constants;
 
+import com.google.common.collect.Lists;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public enum Constants {
     /**
      * 视频分区的数字
@@ -36,6 +42,19 @@ public enum Constants {
 
     public String getDescription() {
         return this.description;
+    }
+
+    //讲枚举转换成list格式，这样前台遍历的时候比较容易，列如 下拉框 后台调用toList方法，你就可以得到code 和name了
+    public static List toList() {
+        List list = Lists.newArrayList();//Lists.newArrayList()其实和new ArrayList()几乎一模
+        //  一样, 唯一它帮你做的(其实是javac帮你做的), 就是自动推导(不是"倒")尖括号里的数据类型.
+        for (Constants constantEnum : Constants.values()) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("code", constantEnum.getValue());
+            map.put("description", constantEnum.getDescription());
+            list.add(map);
+        }
+        return list;
     }
 
 }

@@ -53,8 +53,18 @@ spring:
         login-username: admin
         login-password: z1320291471
       connection-init-sqls: set names utf8mb4
-
-
+  redis:
+    host: localhost
+    database: 0
+    timeout: 2000
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-wait: 10000
+        max-idle: 8
   thymeleaf:
     cache: false
     mode: HTML
@@ -66,5 +76,3 @@ mybatis-plus:
   type-aliases-package: com.site.bdata.entity
   mapper-locations: classpath*:mapper/*.xml
 
-mconfig:
-  swagger-ui-open: true

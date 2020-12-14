@@ -3,18 +3,16 @@ package com.site.bdata.controller.data;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.site.bdata.constants.bilibiliConstants;
-import com.site.bdata.dto.AjaxPutPage;
-import com.site.bdata.dto.AjaxResultPage;
-import com.site.bdata.dto.RankCondition;
+import com.site.bdata.dto.form.AjaxPutPage;
+import com.site.bdata.dto.form.AjaxResultPage;
+import com.site.bdata.dto.form.RankCondition;
 import com.site.bdata.entity.BVideoRank;
-import com.site.bdata.service.BVideoDataService;
 import com.site.bdata.service.BVideoRankService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.Api;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -39,7 +37,7 @@ public class BVideoRankController {
      */
     @ResponseBody
     @GetMapping({"/allRank/list"})
-    public AjaxResultPage<BVideoRank> getALLBVideoData(AjaxPutPage<BVideoRank> ajaxPutPage, RankCondition condition) {
+    public AjaxResultPage<BVideoRank> getAllBVideoData(AjaxPutPage<BVideoRank> ajaxPutPage, RankCondition condition) {
         AjaxResultPage<BVideoRank> ajaxResultPage = new AjaxResultPage<>();
         Page<BVideoRank> pagenum = ajaxPutPage.putPageToPage();
         List<BVideoRank> records = null;
@@ -48,17 +46,20 @@ public class BVideoRankController {
                 Timestamp dateBegin = Timestamp.valueOf(condition.getBvTime() + bilibiliConstants.DATE_BEGIN);
                 Timestamp dateEnd = Timestamp.valueOf(condition.getBvTime() + bilibiliConstants.DATE_END);
                 records = bVideoRankService.page(pagenum, new QueryWrapper<BVideoRank>()
-                        .lambda().eq(BVideoRank::getBvRankzone, condition.getBvRankzone()).between(BVideoRank::getBvTime, dateBegin, dateEnd)).getRecords();
+                        .lambda().eq(BVideoRank::getBvRankzone, condition.getBvRankzone())
+                        .between(BVideoRank::getBvTime, dateBegin, dateEnd)
+                        .orderByDesc(BVideoRank::getBvTime).orderByAsc(BVideoRank::getBvRanknum)).getRecords();
             } else {
                 records = bVideoRankService.page(pagenum, new QueryWrapper<BVideoRank>()
-                        .lambda().eq(BVideoRank::getBvRankzone, condition.getBvRankzone())).getRecords();
+                        .lambda().eq(BVideoRank::getBvRankzone, condition.getBvRankzone())
+                        .orderByDesc(BVideoRank::getBvTime).orderByAsc(BVideoRank::getBvRanknum)).getRecords();
             }
         } else {
             condition.setBvRankzone(0);
             records = bVideoRankService.page(pagenum, new QueryWrapper<BVideoRank>()
-                    .lambda().eq(BVideoRank::getBvRankzone, condition.getBvRankzone())).getRecords();
+                    .lambda().eq(BVideoRank::getBvRankzone, condition.getBvRankzone())
+                    .orderByDesc(BVideoRank::getBvTime).orderByAsc(BVideoRank::getBvRanknum)).getRecords();
         }
-
         ajaxResultPage.setData(records);
         ajaxResultPage.setCode(0);
         ajaxResultPage.setMsg("成功");

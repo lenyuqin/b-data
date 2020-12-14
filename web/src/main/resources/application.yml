@@ -1,0 +1,98 @@
+# Tomcat
+server:
+  # 端 口
+  port: 8383
+  # Servlet
+  servlet:
+    # Session
+    session:
+      # 超 时 时 间
+      timeout: 120m
+
+# Spring 配置
+spring:
+  session:
+    timeout: 120m
+  #thymeleaf解析
+  thymeleaf:
+      enabled: true  #开启thymeleaf视图解析
+      cache: false
+      mode: HTML
+     # prefix: classpath:/templates/  #前缀
+      encoding: UTF-8
+      servlet:
+        content-type: text/html
+  # Druid Pool 运行环境
+  profiles:
+    # 运 行 环 境
+    active: datasource
+
+# mybatis 配 置
+mybatis-plus:
+  type-aliases-package: com.site.modules.system.domain
+  mapper-locations: classpath*:mapper/*.xml
+
+# Pear 插 件 配 置 信 息
+pear:
+    # Document 配 置 信 息
+  swagger:
+      # 文 档 标 题
+    title: Pear Admin API
+      # 是 否 开 启
+    enable: true
+      # 描 述 信 息
+    describe: 企 业 快 速 开 发 平 台
+      # 扫 包 路 径
+    scan-package: com.site.modules.system
+      # 协 议
+    licence: apache
+      # 协 议 地 址
+    licence-url: https://gitee.com/pear_community
+      # 组 织 信 息
+    terms-of-service-url: https://gitee.com/pear_community
+      # 版 本 信 息
+    version: Release 2.0.0
+      # 扩 展 信 息
+    contact:
+        # 作 者
+      name: lenyuqin
+        # 连 接
+      url: www.com.pearadmin.cn
+        # 邮 箱
+      email: 1151475385@gmail.com
+
+  # 权 限 配 置
+  security:
+    #开启超级管理员账号--配置之后不需要验证权限
+    super-auth-open: true
+    #超级管理员账号--配置之后不需要验证权限
+    super-admin: admin
+    #记住密码key
+    remember-key: oanus_admins_2020_perar_admins_springboot
+    # 不 需 要 权 限 拦 截 的 接 口 配 置
+    open-api:
+      - /login/**  # 开放 登录 接口
+      - /system/captcha/** # 开放 验证码生成 接口
+      - /assets/** # 开放 静态资源
+      - /admin/** # 开放 静态资源
+      - /component/** # 开放 静态资源
+      - /favicon.ico # 开放 Logo
+      - /x-data/**
+  # 上 传 配 置
+  upload:
+    # 当前系统环境
+    os: windows
+    # windows 上传路径
+    windows-path: D:\home\uploads\
+    # linux 上传路径
+    linux-path: /home/uploads/
+
+# logging 配置
+logging:
+  # 日 志 级 别
+  level:
+    # 日 志 包 配 置
+    com.site.*: DEBUG
+
+
+

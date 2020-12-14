@@ -2,36 +2,28 @@ package com.site.bdata;
 
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.extra.emoji.EmojiUtil;
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.site.bdata.constants.Constants;
 import com.site.bdata.constants.bilibiliConstants;
-import com.site.bdata.datasources.DataUpload;
 import com.site.bdata.datasources.bilibiliRank;
-import com.site.bdata.dto.AjaxResultPage;
+import com.site.bdata.dto.form.AjaxResultPage;
 import com.site.bdata.entity.BVideoData;
 import com.site.bdata.entity.BVideoHistory;
 import com.site.bdata.entity.BVideoRank;
 import com.site.bdata.service.BVideoDataService;
 import com.site.bdata.service.BVideoHistoryService;
 import com.site.bdata.service.BVideoRankService;
-import com.site.bdata.util.BVStringUtil;
 import com.site.bdata.util.DateUtils;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,6 +37,9 @@ class BdataApplicationTests {
     private BVideoHistoryService bVideoHistoryService;
     @Resource
     private BVideoDataService bVideoDataService;
+    @Resource
+    private bilibiliRank bilibiliRank;
+
 
     @Test
     void contextLoads() {
@@ -138,21 +133,29 @@ class BdataApplicationTests {
     @Test
     void testList() {
         Page<BVideoRank> pagenum = new Page<>(1, 10);
-//        DateTime date = DateUtil.date();
-        String format="yyyy-MM-dd";
-
+        DateTime date = DateUtil.date();
+        String format = "yyyy-MM-dd";
 
 
         List<BVideoRank> records = bVideoRankService.page(pagenum, new QueryWrapper<BVideoRank>()
                 .lambda().eq(BVideoRank::getBvRankzone, 0)).getRecords();
         records.forEach(item -> {
-            item.setBvTime(DateUtil.parse(DateUtil.format(item.getBvTime(),format)));
+            item.setBvTime(DateUtil.parse(DateUtil.format(item.getBvTime(), format)));
         });
 
         for (BVideoRank record : records) {
             System.out.println(record);
         }
 
+    }
+
+
+    /**
+     * 测试新的接口的请求地址
+     */
+    @Test
+    void testList2() {
+        bilibiliRank.getVideoRanklist();
     }
 
 

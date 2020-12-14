@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/template :: header(~{::title},~{::link},~{::style})">
+    <title>B-DATA</title>
+    <link rel="stylesheet" th:href="@{/x-data/css/login.css}">
+    <link rel="stylesheet" th:href="@{/x-data/css/iconfont.css}">
+</head>
+<body class="layui-layout-login">
+<div class="login-bg">
+    <div class="cover"></div>
+</div>
+<div class="login-content captcha">
+    <h1 class="login-box-title"><span class="iconfont fa  icon-bilibili-line"></span> 登录</h1>
+    <form class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-icon layui-icon-username" for="username"></label>
+            <input class="layui-input" lay-verify="required" lay-reqtext="用户名不能为空" type="text" name="username"
+                   id="username" placeholder="用户名">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-icon layui-icon-password" for="password"></label>
+            <input class="layui-input" lay-verify="required" lay-reqtext="密码不能为空" type="password" name="password"
+                   id="password" placeholder="密码">
+        </div>
+        <div class="layui-form-item captcha-item">
+            <label class="layui-icon layui-icon-vercode"></label>
+            <input class="layui-input" type="text" name="captcha" lay-verify="required" lay-reqtext="验证码不能为空"
+                   autocomplete="off" placeholder="验证码">
+            <img class="captcha-img" th:src="@{/system/captcha/generate}"/>
+        </div>
+        <div class="layui-form-item">
+            <input type="checkbox" name="remember-me" title="记住我" lay-skin="primary">
+            <a class="layui-layout-right forget-password" href="javascript:alert('账号为root，密码为123')">忘记密码?</a>
+        </div>
+        <button type="submit" lay-submit class="layui-btn layui-btn-fluid ajax-login login"><i
+                class="fa fa-sign-in fa-lg fa-fw"></i> 登录
+        </button>
+    </form>
+    <div class="layui-layer-loading login-page-loading">
+        <div class="layui-layer-content"></div>
+    </div>
+</div>
+<script th:replace="/template :: script"></script>
+<script th:src="@{/x-data/js/login.js}" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

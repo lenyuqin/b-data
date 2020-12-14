@@ -7,3 +7,7 @@ bdata/mvnw
 bdata/mvnw.cmd
 
 
+log/
+src/main/resources/static/test/
+src/main/resources/static/x-data/css/iconfont.css
+src/main/resources/templates/
