@@ -19,7 +19,6 @@
         <commons.io.version>2.5</commons.io.version>
         <!-- 分 页 工 具 类 -->
         <pagehelper.version>1.2.10</pagehelper.version>
-
     </properties>
 
     <!-- 依 赖 管 理 -->
@@ -41,6 +40,11 @@
             <groupId>com.github.whvcse</groupId>
             <artifactId>easy-captcha</artifactId>
             <version>${captcha.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.site</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
         </dependency>
 
     </dependencies>

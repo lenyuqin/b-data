@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.site.common.mapper.BVideoHistoryMapper">
+
+    <resultMap type="com.site.common.entity.BVideoHistory" id="BVideoHistoryMap">
+        <result property="bvNumber" column="BV_NUMBER" jdbcType="VARCHAR"/>
+        <result property="bvUp" column="BV_UP" jdbcType="VARCHAR"/>
+        <result property="bvTitle" column="BV_TITLE" jdbcType="VARCHAR"/>
+        <result property="bvUpuuid" column="BV_UPUUID" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,7 +1,7 @@
 //  菜单显示异常修改tinymce/skins/ui/oxide/skin.min.css:96 .tox-silver-sink的z-index值
 //  http://tinymce.ax-z.cn/   中文文档
 
-layui.define(['jquery'],function (exports) {
+layui.define(['jquery'], function (exports) {
     var $ = layui.$
 
     var modFile = layui.cache.modules['tinymce'];
@@ -63,7 +63,7 @@ layui.define(['jquery'],function (exports) {
 
         option.images_upload_url = option.images_upload_url ? option.images_upload_url : settings.images_upload_url;
 
-        option.images_upload_handler = option.images_upload_handler !=null? option.images_upload_handle:function (blobInfo, succFun, failFun) {
+        option.images_upload_handler = option.images_upload_handler != null ? option.images_upload_handle : function (blobInfo, succFun, failFun) {
 
             var formData = new FormData();
 

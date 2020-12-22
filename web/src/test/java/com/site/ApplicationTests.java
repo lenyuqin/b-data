@@ -1,6 +1,6 @@
 package com.site;
 
-import com.site.modules.system.mapper.SysUserMapper;
+import com.site.web.mapper.SysUserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

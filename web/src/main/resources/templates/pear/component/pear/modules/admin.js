@@ -32,16 +32,19 @@ layui.define(['table', 'jquery', 'element', 'yaml','form', 'tab', 'menu', 'frame
 				}
 			}
 
+			//加载配置文件
 			this.readConfig = function() {
 				const configUrl = configPath === '' ? "pear.config.yml" : configPath;
 				return yaml.load(configUrl);
 			}
 
+				//
 			this.logoRender = function(param) {
 				$(".layui-logo .logo").attr("src", param.logo.image);
 				$(".layui-logo .title").html(param.logo.title);
 			}
 
+			//加载菜单
 			this.menuRender = function(param) {
 				sideMenu = pearMenu.render({
 					elem: 'sideMenu',

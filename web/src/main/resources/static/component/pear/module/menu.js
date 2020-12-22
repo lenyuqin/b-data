@@ -88,7 +88,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 	}
 
 	pearMenu.prototype.selectItem = function(pearId) {
-		if (this.option.control != false) {
+		if (this.option.control !== false) {
 			$("#" + this.option.elem + " a[menu-id='" + pearId + "']").parents(".layui-side-scroll ").find("ul").css({
 				display: "none"
 			});
@@ -217,6 +217,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 
 			}
 			index++;
+
 			$.each(item.children, function(i, note) {
 				// 创 建 每 一 个 菜 单 项
 				var content = '<li class="layui-nav-item" >';

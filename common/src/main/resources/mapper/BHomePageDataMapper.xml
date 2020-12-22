@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.site.common.mapper.BHomePageDataMapper">
+
+    <resultMap type="com.site.common.entity.BHomePageData" id="BHomePageDataMap">
+        <result property="bvTotalVisits" column="bv_total_visits" jdbcType="INTEGER"/>
+        <result property="bvDay" column="bv_day" jdbcType="TIMESTAMP"/>
+        <result property="bvDayVisits" column="bv_day_visits" jdbcType="INTEGER"/>
+        <result property="bvTotalVideo" column="bv_total_video" jdbcType="INTEGER"/>
+        <result property="bvTotalUp" column="bv_total_up" jdbcType="INTEGER"/>
+        <result property="bvHistoryVisits" column="bv_history_visits" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+</mapper>

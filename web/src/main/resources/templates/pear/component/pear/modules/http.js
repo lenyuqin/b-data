@@ -10,6 +10,7 @@ layui.define(['jquery', 'layer'], function (exports) {
 
         var options = $.extend(true, {}, http.ajax.defaultOpts, userOptions);
         var oldBeforeSendOption = options.beforeSend;
+
         options.beforeSend = function (xhr) {
             if (oldBeforeSendOption) {
                 oldBeforeSendOption(xhr);
@@ -138,7 +139,6 @@ layui.define(['jquery', 'layer'], function (exports) {
             if (!token) {
                 return;
             }
-
             if (!settings.headers || settings.headers[http.ajax.tokenHeaderName] === undefined) {
                 request.setRequestHeader(http.ajax.tokenHeaderName, token);
             }
