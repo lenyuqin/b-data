@@ -3,15 +3,12 @@ package com.site.web.controller;
 import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.site.common.entity.BHomePageData;
-import com.site.common.entity.BVideoData;
 import com.site.common.service.BHomePageDataService;
 import com.site.web.plugins.pvuv.PvuvString;
 import com.site.web.utils.redis.RedisUtil;
 import com.site.web.web.domain.response.Result;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -37,7 +34,7 @@ public class SysIndexController {
     //todo 要完成首页数据的返回，先建立表格吧
 
     /**
-     * 返回首页访问量的数据
+     * 返回首页访问量的数据，
      *
      * @return Result
      */

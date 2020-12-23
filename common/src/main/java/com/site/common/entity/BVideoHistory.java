@@ -1,5 +1,6 @@
 package com.site.common.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class BVideoHistory implements Serializable {
     /**
      * 视频BV号
      */
+    @TableId
     private String bvNumber;
 
     /**

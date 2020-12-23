@@ -7,6 +7,7 @@
         <groupId>com.site</groupId>
         <version>1.0</version>
     </parent>
+    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>web</artifactId>
     <!-- 版 本 管 理 -->
@@ -46,6 +47,11 @@
             <artifactId>common</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.site</groupId>
+            <artifactId>datasource</artifactId>
+            <version>1.0</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -54,6 +60,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
             </plugin>
         </plugins>
     </build>

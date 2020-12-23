@@ -38,7 +38,7 @@ public class SysEntranceController extends BaseController {
      * Return: 登录视图
      */
     @GetMapping("index")
-    @Logging(title = "主页", describe = "返回 Index 主页视图", type = BusinessType.ADD)
+    //@Logging(title = "主页", describe = "返回 Index 主页视图", type = BusinessType.ADD)
     public ModelAndView index() {
         return JumpPage("index");
     }

@@ -1,6 +1,6 @@
 package com.site;
 
-import com.site.web.mapper.SysUserMapper;
+import com.site.datasourse.getdata.BilibiliRank;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,11 +14,15 @@ import javax.annotation.Resource;
 public class ApplicationTests {
 
     @Resource
-    private SysUserMapper sysUserMapper;
+    private BilibiliRank bilibiliRank;
 
     @Test
     void test1(){
-        System.out.println(sysUserMapper.selectByUsername("admin"));
+        //bilibiliRank.getVideoRanklist();
+        //bilibiliRank.getPopular();
     }
+
+
+
 
 }

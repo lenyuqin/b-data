@@ -1,5 +1,6 @@
 package com.site.common.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class BAuthorBasedata implements Serializable {
     /**
      * 作者的UUID（唯一）
      */
+    @TableId
     private Long bvUpuuid;
 
     /**
@@ -32,5 +34,17 @@ public class BAuthorBasedata implements Serializable {
      * 作者视频的总播放数
      */
     private Long bvUpView;
+
+    /**
+     * 作者的头像
+     */
+    private String bvFaceUrl;
+
+    /**
+     * 作者的昵称
+     */
+    private String bvName;
+
+
 
 }

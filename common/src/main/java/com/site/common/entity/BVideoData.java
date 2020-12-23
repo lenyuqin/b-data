@@ -9,11 +9,11 @@ import java.util.Date;
  * (BVideoData)实体类
  *
  * @author lmk
- * @since 2020-12-21 15:53:06
+ * @since 2020-12-23 12:13:55
  */
 @Data
 public class BVideoData implements Serializable {
-    private static final long serialVersionUID = -14258867591423492L;
+    private static final long serialVersionUID = -29333051165115673L;
     /**
      * 视频BV号
      */
@@ -45,6 +45,11 @@ public class BVideoData implements Serializable {
     private Long bvCollectnum;
 
     /**
+     * 评论的数量
+     */
+    private Integer bvReply;
+
+    /**
      * 分享数量
      */
     private Long bvSharenum;
@@ -68,5 +73,15 @@ public class BVideoData implements Serializable {
      * 搜索视频的时间
      */
     private Date bvTime;
+
+    /**
+     * 视频描述
+     */
+    private String bvDesc;
+
+    /**
+     * 视频封面图片url
+     */
+    private String bvPicUrl;
 
 }

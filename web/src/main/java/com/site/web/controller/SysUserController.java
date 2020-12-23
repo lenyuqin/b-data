@@ -100,7 +100,7 @@ public class SysUserController extends BaseController {
     @PostMapping("save")
     @ApiOperation(value="保存用户数据")
     //@PreAuthorize("hasPermission('/system/user/add','sys:user:add')")
-    @Logging(title = "新增用户",describe = "新增用户",type = BusinessType.ADD)
+    //@Logging(title = "新增用户",describe = "新增用户",type = BusinessType.ADD)
     public Result save(@RequestBody SysUser sysUser){
         sysUser.setLogin("0");
         sysUser.setEnable("1");
@@ -165,7 +165,7 @@ public class SysUserController extends BaseController {
     @PutMapping("update")
     @ApiOperation(value="修改用户数据")
     //@PreAuthorize("hasPermission('/system/user/edit','sys:user:edit')")
-    @Logging(title = "修改用户",describe = "修改用户",type = BusinessType.EDIT)
+    //@Logging(title = "修改用户",describe = "修改用户",type = BusinessType.EDIT)
     public Result update(@RequestBody SysUser sysUser){
         sysUserService.saveUserRole(sysUser.getUserId(), Arrays.asList(sysUser.getRoleIds().split(",")));
         boolean result = sysUserService.update(sysUser);
@@ -180,7 +180,7 @@ public class SysUserController extends BaseController {
     @DeleteMapping("batchRemove/{ids}")
     @ApiOperation(value="批量删除用户")
     //@PreAuthorize("hasPermission('/system/user/remove','sys:user:remove')")
-    @Logging(title = "删除用户",describe = "删除用户",type = BusinessType.REMOVE)
+    //@Logging(title = "删除用户",describe = "删除用户",type = BusinessType.REMOVE)
     public Result batchRemove(@PathVariable String ids){
         boolean result = sysUserService.batchRemove(ids.split(","));
         return decide(result);
@@ -195,7 +195,7 @@ public class SysUserController extends BaseController {
     @DeleteMapping("remove/{id}")
     @ApiOperation(value="删除用户数据")
     //@PreAuthorize("hasPermission('/system/user/remove','sys:user:remove')")
-    @Logging(title = "删除用户",describe = "删除用户",type = BusinessType.REMOVE)
+    //@Logging(title = "删除用户",describe = "删除用户",type = BusinessType.REMOVE)
     public Result remove(@PathVariable String id){
         // TODO remove userRole data
         boolean result  = sysUserService.remove(id);

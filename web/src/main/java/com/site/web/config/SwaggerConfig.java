@@ -1,7 +1,8 @@
 package com.site.web.config;
 
-import lombok.extern.slf4j.Slf4j;
 import com.site.web.config.proprety.SwaggerProperty;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -12,6 +13,7 @@ import springfox.documentation.spi.DocumentationType;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+
 import javax.annotation.Resource;
 import java.util.ArrayList;
 
@@ -19,7 +21,7 @@ import java.util.ArrayList;
  * Describe: 接 口 文 档 配 置 文 件
  * Author: 就 眠 仪 式
  * CreateTime: 2019/10/23
- * */
+ */
 @Slf4j
 @Configuration
 @EnableSwagger2
@@ -31,7 +33,7 @@ public class SwaggerConfig {
     private SwaggerProperty documentAutoProperties;
 
     @Bean
-    public Docket docker(){
+    public Docket docker() {
         log.info("Read document configuration information");
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
@@ -42,12 +44,15 @@ public class SwaggerConfig {
                 .build();
     }
 
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfo(
                 documentAutoProperties.getTitle(),
-                documentAutoProperties.getDescribe() ,
+                documentAutoProperties.getDescribe(),
                 documentAutoProperties.getVersion(),
-                documentAutoProperties.getTermsOfServiceUrl(),documentAutoProperties.getContact(),documentAutoProperties.getLicence(),documentAutoProperties.getLicenceUrl(),
+                documentAutoProperties.getTermsOfServiceUrl(),
+                documentAutoProperties.getContact(),
+                documentAutoProperties.getLicence(),
+                documentAutoProperties.getLicenceUrl(),
                 new ArrayList<>()
         );
     }

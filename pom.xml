@@ -54,7 +54,6 @@
     </properties>
 
     <modules>
-        <module>bdata</module>
         <module>upload</module>
         <module>common</module>
         <module>component</module>
@@ -62,6 +61,7 @@
         <module>permission</module>
         <module>web</module>
         <module>process</module>
+        <module>datasource</module>
     </modules>
 
     <dependencies>

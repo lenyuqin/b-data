@@ -37,13 +37,13 @@ pear:
     # Document 配 置 信 息
   swagger:
       # 文 档 标 题
-    title: Pear Admin API
+    title: Bdata API
       # 是 否 开 启
     enable: true
       # 描 述 信 息
-    describe: 企 业 快 速 开 发 平 台
+    describe: bilibili数据分析网站
       # 扫 包 路 径
-    scan-package: com.site.modules.system
+    scan-package: com.site
       # 协 议
     licence: apache
       # 协 议 地 址

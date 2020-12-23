@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.site.common.mapper.BPopularDataMapper">
+
+    <resultMap type="com.site.common.entity.BPopularData" id="BPopularDataMap">
+        <result property="bvNumber" column="bv_number" jdbcType="VARCHAR"/>
+        <result property="bvTitle" column="bv_title" jdbcType="VARCHAR"/>
+        <result property="bvPicUrl" column="bv_pic_url" jdbcType="VARCHAR"/>
+        <result property="bvUp" column="bv_up" jdbcType="VARCHAR"/>
+        <result property="bvView" column="bv_view" jdbcType="INTEGER"/>
+        <result property="bvLike" column="bv_like" jdbcType="INTEGER"/>
+        <result property="bvCoin" column="bv_coin" jdbcType="INTEGER"/>
+        <result property="bvDanmaku" column="bv_danmaku" jdbcType="INTEGER"/>
+        <result property="bvShare" column="bv_share" jdbcType="INTEGER"/>
+        <result property="bvUpuuid" column="bv_upuuid" jdbcType="VARCHAR"/>
+        <result property="bvDesc" column="bv_desc" jdbcType="VARCHAR"/>
+        <result property="bvUpFace" column="bv_up_face" jdbcType="VARCHAR"/>
+        <result property="bvRank" column="bv_rank" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+</mapper>
