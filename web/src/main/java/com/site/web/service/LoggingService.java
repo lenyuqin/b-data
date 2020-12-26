@@ -1,6 +1,6 @@
 package com.site.web.service;
 
-import com.site.web.domain.Logging;
+import com.site.web.entity.Logging;
 import com.site.web.plugins.logging.enums.LoggingType;
 
 import java.util.List;

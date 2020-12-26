@@ -31,7 +31,6 @@ public class SysIndexController {
     private BHomePageDataService bHomePageDataService;
 
 
-    //todo 要完成首页数据的返回，先建立表格吧
 
     /**
      * 返回首页访问量的数据，

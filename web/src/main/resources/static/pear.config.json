@@ -7,7 +7,8 @@
     "data": "/system/user/getUserMenu",
     "accordion": true,
     "control": false,
-    "select": "451003242072117248"
+    "async": true,
+    "select": "1"
   },
   "tab": {
     "muiltTab": true,

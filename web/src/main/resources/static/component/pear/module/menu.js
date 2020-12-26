@@ -28,6 +28,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 			done: opt.done ? opt.done : function() {}
 		}
 
+		//这里是渲染菜单
 		if (option.async) {
 			getData(option.url).then(function(data){
 				option.data = data;
@@ -75,6 +76,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 			clickEvent(dom, data);
 		})
 	}
+
 
 	function hash(dom) {
 		return dom.parent().parent().prev();
@@ -141,6 +143,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		}
 	}
 
+	//这里是获取数据
 	function getData(url){
 		var defer = $.Deferred();
 		$.get(url+"?fresh=" + Math.random(), function(result) {
@@ -188,6 +191,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		$("#" + option.elem).html(menuHtml);
 	}
 
+	//
 	function createMenuAndControl(option) {
 		var control = '<ul class="layui-nav  pear-nav-control pc layui-hide-xs">';
 		var controlPe = '<ul class="layui-nav pear-nav-control layui-hide-sm">';
@@ -314,6 +318,7 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 		return content;
 	}
 
+	//
 	function downShow(option) {
 		$("body #" + option.elem).on("click", "a[menu-type='0']", function() {
 			if (!$("#" + option.elem).is(".pear-nav-mini")) {
@@ -395,5 +400,6 @@ layui.define(['table', 'jquery', 'element'], function(exports) {
 			$("#" + option.elem + " dd").off('mouseenter').unbind('mouseleave');
 		}
 	}
+
 	exports(MOD_NAME, new pearMenu());
 })

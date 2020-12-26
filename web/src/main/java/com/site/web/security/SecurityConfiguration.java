@@ -129,10 +129,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(securityCaptchaSupport, UsernamePasswordAuthenticationFilter.class)//验证码验证类
-            .httpBasic()
+                .httpBasic()
                 .authenticationEntryPoint(securityAuthenticationEntryPoint)
                 .and()
-            .formLogin()
+                .formLogin()
                 //登录页面
                 .loginPage("/login")
                 //登录接口
@@ -142,20 +142,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //配置登录失败自定义处理类
                 .failureHandler(securityAccessFailureHander)
                 .and()
-            .logout()
+                .logout()
                 .deleteCookies("JSESSIONID") //退出登录删除 cookie缓存
                 .logoutSuccessHandler(securityAccessLogoutHander) //配置用户登出自定义处理类
                 .and()
-            .exceptionHandling()
+                .exceptionHandling()
                 .accessDeniedHandler(securityAccessDeniedHander) //配置没有权限自定义处理类
                 .and()
-            .rememberMe()
+                .rememberMe()
                 .rememberMeParameter("remember-me")
                 .rememberMeCookieName("rememberme-token")
                 .tokenRepository(securityUserTokenService)
                 .key(securityProperty.getRememberKey())
                 .and()
-            .sessionManagement()
+                .sessionManagement()
                 .sessionFixation()
                 .migrateSession()
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) //在需要使用到session时才创建session
@@ -163,7 +163,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .maxSessionsPreventsLogin(false)
                 .expiredSessionStrategy(securityExpiredSessionHandler) // //踢出用户操作
                 .sessionRegistry(sessionRegistry()); //用于统计在线
-
         // 取消跨站请求伪造防护
         http.csrf().disable();
         // 防止iframe 造成跨域

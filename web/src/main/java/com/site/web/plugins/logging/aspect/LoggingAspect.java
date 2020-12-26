@@ -1,6 +1,6 @@
 package com.site.web.plugins.logging.aspect;
 
-import com.site.web.domain.Logging;
+import com.site.web.entity.Logging;
 import com.site.web.plugins.logging.enums.LoggingType;
 import com.site.web.plugins.logging.factory.LoggingFactory;
 import com.site.web.utils.sequence.SequenceUtil;

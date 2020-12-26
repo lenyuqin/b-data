@@ -14,6 +14,7 @@ layui.define(['table', 'jquery', 'element', 'form', 'tab', 'menu', 'frame'],
 		var bodyTab;
 		var config;
 
+		//admin.render()后会进入这里，进行页面渲染
 		var pearAdmin = new function() {
 			this.render = function() {
 				readConfig().then(function(param) {
@@ -31,7 +32,9 @@ layui.define(['table', 'jquery', 'element', 'form', 'tab', 'menu', 'frame'],
 				$(".layui-logo .title").html(param.logo.title);
 			}
 
-			this.menuRender = function(param) {
+			//读取配置文件
+			this.menuRender = function (param) {
+				//这里调用了menu.js的函数
 				sideMenu = pearMenu.render({
 					elem: 'sideMenu',
 					async: true,

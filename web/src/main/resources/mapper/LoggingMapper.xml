@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.site.web.mapper.LoggingMapper">
 
-    <select id="selectList" resultType="com.site.web.domain.Logging">
+    <select id="selectList" resultType="com.site.web.entity.Logging">
         select
         id as id,
         title as title,
@@ -27,7 +27,7 @@
         order by create_time desc
     </select>
 
-    <insert id="insert" parameterType="com.site.web.domain.Logging">
+    <insert id="insert" parameterType="com.site.web.entity.Logging">
         insert into sys_logging
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -143,7 +143,7 @@
         </trim>
     </insert>
 
-    <select id="getById" resultType="com.site.web.domain.Logging">
+    <select id="getById" resultType="com.site.web.entity.Logging">
         select
         id as id,
         title as title,

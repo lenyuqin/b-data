@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.site.common.mapper.SysLoggingMapper">
+
+    <resultMap type="com.site.common.entity.SysLogging" id="SysLoggingMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="method" column="method" jdbcType="VARCHAR"/>
+        <result property="businessType" column="business_type" jdbcType="VARCHAR"/>
+        <result property="requestMethod" column="request_method" jdbcType="VARCHAR"/>
+        <result property="operateName" column="operate_name" jdbcType="VARCHAR"/>
+        <result property="operateUrl" column="operate_url" jdbcType="VARCHAR"/>
+        <result property="operateAddress" column="operate_address" jdbcType="VARCHAR"/>
+        <result property="requestParam" column="request_param" jdbcType="VARCHAR"/>
+        <result property="responseBody" column="response_body" jdbcType="VARCHAR"/>
+        <result property="success" column="success" jdbcType="VARCHAR"/>
+        <result property="errorMsg" column="error_msg" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="requestBody" column="request_body" jdbcType="VARCHAR"/>
+        <result property="browser" column="browser" jdbcType="VARCHAR"/>
+        <result property="systemOs" column="system_os" jdbcType="VARCHAR"/>
+        <result property="loggingType" column="logging_type" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+</mapper>

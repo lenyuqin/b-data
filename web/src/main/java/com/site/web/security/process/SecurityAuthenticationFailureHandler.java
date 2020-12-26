@@ -2,7 +2,7 @@ package com.site.web.security.process;
 
 import com.alibaba.fastjson.JSON;
 import com.site.web.exception.auth.CaptchaException;
-import com.site.web.domain.Logging;
+import com.site.web.entity.Logging;
 import com.site.web.plugins.logging.enums.BusinessType;
 import com.site.web.plugins.logging.enums.LoggingType;
 import com.site.web.service.LoggingService;

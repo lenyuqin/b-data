@@ -197,12 +197,6 @@
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
             <version>${dynamic.verion}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-boot-starter-aop</artifactId>
-                    <groupId>org.springframework.boot</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 

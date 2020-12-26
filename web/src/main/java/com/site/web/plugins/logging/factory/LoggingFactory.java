@@ -1,6 +1,6 @@
 package com.site.web.plugins.logging.factory;
 
-import com.site.web.domain.Logging;
+import com.site.web.entity.Logging;
 import com.site.web.service.LoggingService;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;

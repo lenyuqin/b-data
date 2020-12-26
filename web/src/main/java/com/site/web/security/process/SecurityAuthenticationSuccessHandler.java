@@ -1,16 +1,13 @@
 package com.site.web.security.process;
 
 import com.alibaba.fastjson.JSON;
-import com.site.web.domain.Logging;
+import com.site.web.entity.Logging;
 import com.site.web.plugins.logging.enums.BusinessType;
 import com.site.web.plugins.logging.enums.LoggingType;
 import com.site.web.service.LoggingService;
-import com.site.web.utils.security.SecurityUtil;
 import com.site.web.utils.sequence.SequenceUtil;
 import com.site.web.utils.servlet.ServletUtil;
 import com.site.web.web.domain.response.Result;
-import com.site.web.domain.SysUser;
-import com.site.web.service.ISysUserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -20,7 +17,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 /**
  * Describe: 自定义 Security 用户未登陆处理类
@@ -33,8 +29,8 @@ public class SecurityAuthenticationSuccessHandler implements AuthenticationSucce
     @Resource
     private LoggingService loggingService;
 
-    @Resource
-    private ISysUserService sysUserService;
+    //@Resource
+    //private ISysUserService sysUserService;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
@@ -50,10 +46,10 @@ public class SecurityAuthenticationSuccessHandler implements AuthenticationSucce
         loggingService.save(logging);
 
         // 更新用户
-        SysUser sysUser = new SysUser();
-        sysUser.setUserId(((SysUser) SecurityUtil.currentUser().getPrincipal()).getUserId());
-        sysUser.setLastTime(LocalDateTime.now());
-        sysUserService.update(sysUser);
+        //SysUser sysUser = new SysUser();
+        //sysUser.setUserId(((SysUser) SecurityUtil.currentUser().getPrincipal()).getUserId());
+        //sysUser.setLastTime(LocalDateTime.now());
+        //sysUserService.update(sysUser);
 
         // 响应消息
         Result result = Result.success(200,"登录成功");

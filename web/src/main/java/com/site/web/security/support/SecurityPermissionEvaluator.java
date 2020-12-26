@@ -1,8 +1,8 @@
 package com.site.web.security.support;
 
+import com.site.common.entity.SysPower;
+import com.site.common.entity.SysUser;
 import com.site.web.config.proprety.SecurityProperty;
-import com.site.web.domain.SysPower;
-import com.site.web.domain.SysUser;
 import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -36,16 +36,13 @@ public class SecurityPermissionEvaluator implements PermissionEvaluator {
         if (securityProperty.isSuperAuthOpen() && securityProperty.getSuperAdmin().equals(securityUserDetails.getUsername())) {
             return true;
         }
-        List<SysPower> powerList = securityUserDetails.getPowerList();
-        Set<String> permissions = new HashSet<>();
-        for (SysPower sysPower :powerList) {
-            permissions.add(sysPower.getPowerCode());
-        }
-        if(permissions.contains(o1)){
-            return true;
-        }else{
-            return false;
-        }
+        //List<SysPower> powerList = securityUserDetails.getPowerList();
+        //Set<String> permissions = new HashSet<>();
+        //for (SysPower sysPower :powerList) {
+        //    permissions.add(sysPower.getPowerCode());
+        //}
+        //return permissions.contains(o1);
+        return true;
     }
 
     @Override
