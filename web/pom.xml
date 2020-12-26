@@ -55,17 +55,26 @@
 
     </dependencies>
     <build>
-        <!-- Maven 构 建 插 件 -->
+        <finalName>b-data</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.9</version>
+                <configuration>
+                    <!--这里指定打包镜像的名称-->
+                    <repository>${project.build.finalName}</repository>
+                    <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>

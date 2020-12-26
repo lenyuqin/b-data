@@ -1,0 +1,743 @@
+[
+    {
+        "id": "1",
+        "parentId": "0",
+        "title": "系统管理",
+        "type": "0",
+        "openType": null,
+        "icon": "layui-icon layui-icon-vercode",
+        "href": "",
+        "children": [
+            {
+                "id": "1322085079861690368",
+                "parentId": "1",
+                "title": "用户管理",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon layui-icon layui-icon-rate",
+                "href": "/system/user/main",
+                "children": [
+                    {
+                        "id": "1322085393021009920",
+                        "parentId": "1322085079861690368",
+                        "title": "用户新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1322085270392143872",
+                        "parentId": "1322085079861690368",
+                        "title": "用户列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1322085497798918144",
+                        "parentId": "1322085079861690368",
+                        "title": "用户修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1322085659766161408",
+                        "parentId": "1322085079861690368",
+                        "title": "用户删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-rate",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "3",
+                "parentId": "1",
+                "title": "角色管理",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon-user",
+                "href": "/system/role/main",
+                "children": [
+                    {
+                        "id": "1310209696916832256",
+                        "parentId": "3",
+                        "title": "角色新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310209900478988288",
+                        "parentId": "3",
+                        "title": "角色删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310210054728712192",
+                        "parentId": "3",
+                        "title": "角色修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310211965188046848",
+                        "parentId": "3",
+                        "title": "角色授权",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "442359447487123456",
+                        "parentId": "3",
+                        "title": "角色列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-rate",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "4",
+                "parentId": "1",
+                "title": "权限管理",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon-vercode",
+                "href": "/system/power/main",
+                "children": [
+                    {
+                        "id": "1310226416867999744",
+                        "parentId": "4",
+                        "title": "权限列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310226976593674240",
+                        "parentId": "4",
+                        "title": "权限新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310227130998587392",
+                        "parentId": "4",
+                        "title": "权限修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310227300935008256",
+                        "parentId": "4",
+                        "title": "权限删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "1315584471046553600",
+                "parentId": "1",
+                "title": "部门管理",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon layui-icon-vercode",
+                "href": "/system/dept/main",
+                "children": [
+                    {
+                        "id": "1316558444790022144",
+                        "parentId": "1315584471046553600",
+                        "title": "部门新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1316558556102656000",
+                        "parentId": "1315584471046553600",
+                        "title": "部门修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1317555660455411712",
+                        "parentId": "1315584471046553600",
+                        "title": "部门列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1316558685442408448",
+                        "parentId": "1315584471046553600",
+                        "title": "部门删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "1304387665067507712",
+                "parentId": "1",
+                "title": "数据字典",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon layui-icon layui-icon-flag",
+                "href": "/system/dictType/main",
+                "children": [
+                    {
+                        "id": "1310402491631796224",
+                        "parentId": "1304387665067507712",
+                        "title": "数据类型列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310404584291696640",
+                        "parentId": "1304387665067507712",
+                        "title": "数据字典视图",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310405161587310592",
+                        "parentId": "1304387665067507712",
+                        "title": "数据字典修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310402688881524736",
+                        "parentId": "1304387665067507712",
+                        "title": "数据类型新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310404705934901248",
+                        "parentId": "1304387665067507712",
+                        "title": "数据字典列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310403004406431744",
+                        "parentId": "1304387665067507712",
+                        "title": "数据类型删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310402817776680960",
+                        "parentId": "1304387665067507712",
+                        "title": "数据类型修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310404831407505408",
+                        "parentId": "1304387665067507712",
+                        "title": "数据字典新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310404999599095808",
+                        "parentId": "1304387665067507712",
+                        "title": "数据字典删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "1304793451996381184",
+                "parentId": "1",
+                "title": "文件管理",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon-read",
+                "href": "/system/file/main",
+                "children": [
+                    {
+                        "id": "1310243862937075712",
+                        "parentId": "1304793451996381184",
+                        "title": "文件列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310244103824343040",
+                        "parentId": "1304793451996381184",
+                        "title": "文件新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310244248884346880",
+                        "parentId": "1304793451996381184",
+                        "title": "文件删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "1307299332784914432",
+                "parentId": "1",
+                "title": "系统配置",
+                "type": "1",
+                "openType": "0",
+                "icon": "layui-icon layui-icon layui-icon-note",
+                "href": "/system/config/main",
+                "children": [
+                    {
+                        "id": "1310238229588344832",
+                        "parentId": "1307299332784914432",
+                        "title": "配置列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310238417082122240",
+                        "parentId": "1307299332784914432",
+                        "title": "配置新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310238574355939328",
+                        "parentId": "1307299332784914432",
+                        "title": "配置修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310238700705153024",
+                        "parentId": "1307299332784914432",
+                        "title": "配置删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            }
+        ],
+        "username": null
+    },
+    {
+        "id": "694203021537574912",
+        "parentId": "0",
+        "title": "系统监控",
+        "type": "0",
+        "openType": "",
+        "icon": "layui-icon  layui-icon-console",
+        "href": "",
+        "children": [
+            {
+                "id": "1330865171429588992",
+                "parentId": "694203021537574912",
+                "title": "在线用户",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon-username",
+                "href": "/system/online/main",
+                "children": [],
+                "username": null
+            },
+            {
+                "id": "442650770626711552",
+                "parentId": "694203021537574912",
+                "title": "定时任务",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon layui-icon  layui-icon-chat",
+                "href": "/schedule/job/main",
+                "children": [
+                    {
+                        "id": "1310397832091402240",
+                        "parentId": "442650770626711552",
+                        "title": "任务恢复",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310390699333517312",
+                        "parentId": "442650770626711552",
+                        "title": "任务列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310390994826428416",
+                        "parentId": "442650770626711552",
+                        "title": "任务新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310391095670079488",
+                        "parentId": "442650770626711552",
+                        "title": "任务修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310391707069579264",
+                        "parentId": "442650770626711552",
+                        "title": "任务删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310398020692475904",
+                        "parentId": "442650770626711552",
+                        "title": "任务停止",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310398158974484480",
+                        "parentId": "442650770626711552",
+                        "title": "任务运行",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "442651158935375872",
+                "parentId": "694203021537574912",
+                "title": "任务日志",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon  layui-icon-file",
+                "href": "/schedule/log/main",
+                "children": [
+                    {
+                        "id": "1310395250908332032",
+                        "parentId": "442651158935375872",
+                        "title": "日志列表",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "450300705362808832",
+                "parentId": "694203021537574912",
+                "title": "行为日志",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon  layui-icon-chart",
+                "href": "/system/logging/main",
+                "children": [
+                    {
+                        "id": "1310232350285627392",
+                        "parentId": "450300705362808832",
+                        "title": "操作日志",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1310232462562951168",
+                        "parentId": "450300705362808832",
+                        "title": "登录日志",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            }
+        ],
+        "username": null
+    },
+    {
+        "id": "442417411065516032",
+        "parentId": "0",
+        "title": "开发工具",
+        "type": "0",
+        "openType": "",
+        "icon": "layui-icon layui-icon layui-icon-senior",
+        "href": "",
+        "children": [
+            {
+                "id": "442418188639145984",
+                "parentId": "442417411065516032",
+                "title": "代码生成",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon-template-1",
+                "href": "/generator/main",
+                "children": [],
+                "username": null
+            },
+            {
+                "id": "1302180351979814912",
+                "parentId": "442417411065516032",
+                "title": "布局构建",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon-senior",
+                "href": "component/code/index.html",
+                "children": [],
+                "username": null
+            },
+            {
+                "id": "694203311615639552",
+                "parentId": "442417411065516032",
+                "title": "接口文档",
+                "type": "1",
+                "openType": "_iframe",
+                "icon": "layui-icon layui-icon layui-icon  layui-icon-chart",
+                "href": "/swagger-ui.html",
+                "children": [],
+                "username": null
+            }
+        ],
+        "username": null
+    },
+    {
+        "id": "1307562196556840960",
+        "parentId": "0",
+        "title": "工作流程",
+        "type": "0",
+        "openType": "0",
+        "icon": "layui-icon layui-icon-chat",
+        "href": "",
+        "children": [
+            {
+                "id": "1307562519451140096",
+                "parentId": "1307562196556840960",
+                "title": "模型管理",
+                "type": "1",
+                "openType": "0",
+                "icon": "layui-icon-circle",
+                "href": "/process/model/main",
+                "children": [
+                    {
+                        "id": "1318229908526202880",
+                        "parentId": "1307562519451140096",
+                        "title": "模型新增",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1318230013262168064",
+                        "parentId": "1307562519451140096",
+                        "title": "模型修改",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    },
+                    {
+                        "id": "1318230265385975808",
+                        "parentId": "1307562519451140096",
+                        "title": "模型删除",
+                        "type": "2",
+                        "openType": "",
+                        "icon": "layui-icon layui-icon-vercode",
+                        "href": "",
+                        "children": [],
+                        "username": null
+                    }
+                ],
+                "username": null
+            },
+            {
+                "id": "1308571483794046976",
+                "parentId": "1307562196556840960",
+                "title": "流程定义",
+                "type": "1",
+                "openType": "0",
+                "icon": "layui-icon-chart-screen",
+                "href": "/process/defined/main",
+                "children": [],
+                "username": null
+            }
+        ],
+        "username": null
+    }
+]

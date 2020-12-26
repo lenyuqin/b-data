@@ -12,29 +12,5 @@
     <artifactId>upload</artifactId>
 
 
-    <dependencies>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-java-sdk-core</artifactId>
-            <version>4.5.14</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>ocr20191230</artifactId>
-            <version>0.2.16</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>facebody20191230</artifactId>
-            <version>0.2.16</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-java-sdk-facebody</artifactId>
-            <version>1.2.7</version>
-        </dependency>
-
-
-    </dependencies>
 
 </project>
