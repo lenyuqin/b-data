@@ -68,9 +68,9 @@
                 <configuration>
                     <!--这里指定打包镜像的名称-->
                     <repository>${project.build.finalName}</repository>
-                    <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
+                    <!-- 这里是复制 jar 包到 docker容器指定目录配置 -->
                     <buildArgs>
-                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                        <JAR_FILE>web/target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>
             </plugin>
