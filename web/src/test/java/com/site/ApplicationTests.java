@@ -20,9 +20,9 @@ public class ApplicationTests {
 
     @Test
     void test1() {
-        //long currentTimeMillis = System.currentTimeMillis();
-        ////bilibiliRank.getVideoRanklist();
+        long currentTimeMillis = System.currentTimeMillis();
+        bilibiliRank.getVideoRanklist();
         //bilibiliRank.getPopular();
-        //log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
+        log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
     }
 }
