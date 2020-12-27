@@ -7,14 +7,14 @@
     "data": "/system/user/getUserMenu",
     "accordion": true,
     "control": false,
-    "select": "1"
+    "select": "10"
   },
   "tab": {
     "muiltTab": true,
     "keepState": true,
     "tabMax": 30,
     "index": {
-      "id": "1",
+      "id": "10",
       "href": "/console",
       "title": "首页"
     }

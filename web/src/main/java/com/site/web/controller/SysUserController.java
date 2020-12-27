@@ -1,5 +1,7 @@
 package com.site.web.controller;
 
+import com.site.common.entity.BMenu;
+import com.site.common.service.BMenuService;
 import com.site.web.entity.SysMenu;
 import com.site.web.web.base.BaseController;
 import io.swagger.annotations.Api;
@@ -9,10 +11,12 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author lenyuqin
@@ -23,6 +27,10 @@ import java.util.List;
 @RequestMapping("system/user")
 @Api(value = "用户controller", tags = {"用户操作接口"})
 public class SysUserController extends BaseController {
+
+
+    @Resource
+    private BMenuService bMenuService;
 
     /**
      * Describe: 基础路径
@@ -50,32 +58,40 @@ public class SysUserController extends BaseController {
 
     @GetMapping("getUserMenu")
     public List<SysMenu> getUserMenu() {
-        ArrayList<SysMenu> sysMenulist1 = new ArrayList<>();
-        ArrayList<SysMenu> sysMenulist2 = new ArrayList<>();
+        List<BMenu> bMenuList = bMenuService.list();
+        //将BMenu转化为SysMenu
+        List<SysMenu> sysMenuList = bMenuList.stream().map(bMenu -> {
+            SysMenu sysMenu = new SysMenu();
+            sysMenu.setId(bMenu.getId());
+            sysMenu.setParentId(bMenu.getParentid());
+            sysMenu.setTitle(bMenu.getTitle());
+            sysMenu.setType(bMenu.getType());
+            sysMenu.setOpenType(bMenu.getOpentype());
+            sysMenu.setIcon(bMenu.getIcon());
+            sysMenu.setHref(bMenu.getHref());
+            return sysMenu;
+        }).collect(Collectors.toList());
+        List<SysMenu> sysMenus = toUserMenu(sysMenuList, "0");
+        sysMenus.forEach(System.out::println);
+        return sysMenus;
+    }
 
-        SysMenu sysMenuParent = new SysMenu();
-        sysMenuParent.setId("1");
-        sysMenuParent.setParentId("0");
-        sysMenuParent.setTitle("test");
-        sysMenuParent.setType("1");
-        sysMenuParent.setOpenType("_iframe");
-        sysMenuParent.setIcon( "layui-icon layui-icon layui-icon layui-icon layui-icon-rate");
-        sysMenuParent.setHref("");
-        sysMenuParent.setUsername(null);
-        SysMenu sysMenu = new SysMenu();
-        sysMenu.setId("2");
-        sysMenu.setParentId("1");
-        sysMenu.setTitle("系统管理");
-        sysMenu.setType("0");
-        sysMenu.setOpenType(null);
-        sysMenu.setIcon("layui-icon layui-icon-vercode");
-        sysMenu.setHref("/system/user/main");
-        sysMenu.setChildren(null);
-        sysMenu.setUsername(null);
-        sysMenulist1.add(sysMenu);
-        sysMenuParent.setChildren(sysMenulist1);
-        sysMenulist2.add(sysMenuParent);
-        return sysMenulist2;
+    /**
+     * 递归获取菜单tree
+     *
+     * @param sysMenus
+     * @param parentId
+     * @return
+     */
+    public List<SysMenu> toUserMenu(List<SysMenu> sysMenus, String parentId) {
+        List<SysMenu> list = new ArrayList<>();
+        for (SysMenu menu : sysMenus) {
+            if (parentId.equals(menu.getParentId())) {
+                menu.setChildren(toUserMenu(sysMenus, menu.getId()));
+                list.add(menu);
+            }
+        }
+        return list;
     }
 
 

@@ -49,12 +49,13 @@ public class BilibiliRank {
      * 分出来一个表格么，分都分出来了，不管了，这里爬取就一块都爬取得了，用个set的集合保存就行了,还有作者信息也要存进去，用一个全局的set保存作者和视频
      */
     public void getVideoRanklist() {
+        HashSet<BAuthorBasedata> bAuthorBaseDataHashSet = new HashSet<>();
+        HashSet<BVideoHistory> historyHashSet = new HashSet<>();
+        List<BVideoRank> videoRankList = new ArrayList<>();
+        List<BVideoData> videoDataList = new ArrayList<>();
+        //我是真没想到，这里只需要一秒，而数据库下面居然要这么久！
 
         for (Constants constants : Constants.values()) {
-            HashSet<BAuthorBasedata> bAuthorBaseDataHashSet = new HashSet<>();
-            HashSet<BVideoHistory> historyHashSet = new HashSet<>();
-            List<BVideoRank> videoRankList = new ArrayList<>();
-            List<BVideoData> videoDataList = new ArrayList<>();
             String body = HttpRequest.get(bilibiliConstants.VIDEO_LEADERBOARD_REQUEST_PREFIX + constants.getValue()).timeout(5000).execute().body();
             JSONArray jsonArray = JSON.parseObject(body).getJSONObject("data").getJSONArray("list");
             int videoRankCount = bilibiliConstants.VIDEO_DATA_FLAG;
@@ -121,20 +122,18 @@ public class BilibiliRank {
                 videoRankList.add(bVideoRank);
                 videoRankCount++;
             }
-            //现在所有数据都有了
-            boolean saveOrUpdateBatch = bVideoHistoryService.saveOrUpdateBatch(historyHashSet);
-            boolean saveOrUpdateBatch1 = bAuthorBasedataService.saveOrUpdateBatch(bAuthorBaseDataHashSet);
-            boolean saveBatch = bVideoRankService.saveBatch(videoRankList);
-            boolean saveBatch1 = bVideoDataService.saveBatch(videoDataList);
-            if (saveOrUpdateBatch&&saveOrUpdateBatch1&&saveBatch&&saveBatch1) {
-                log.info(constants.getDescription()+"榜爬取成功");
-            } else {
-                log.error(constants.getDescription()+"榜保存失败");
-            }
         }
 
 
-
+        //现在所有数据都有了
+        //boolean saveOrUpdateBatch = bVideoHistoryService.saveOrUpdateBatch(historyHashSet);
+        //boolean saveOrUpdateBatch1 = bAuthorBasedataService.saveOrUpdateBatch(bAuthorBaseDataHashSet);
+        log.info("videoRankList===========>" + videoRankList.size() + "   videoDataList=============>" + videoDataList.size());
+        //90多秒，就离谱！！！，这么会要这么久啊
+        long currentTimeMillis = System.currentTimeMillis();
+        boolean saveBatch = bVideoRankService.saveBatch(videoRankList, 1500);
+        boolean saveBatch1 = bVideoDataService.saveBatch(videoDataList, 1500);
+        log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
     }
 
 
@@ -149,6 +148,7 @@ public class BilibiliRank {
         HashSet<BAuthorBasedata> basedataHashSet = new HashSet<>();
         List<BPopularData> videoRankList = new ArrayList<>();
         int videoRankCount = bilibiliConstants.VIDEO_DATA_FLAG;
+        //long currentTimeMillis = System.currentTimeMillis();
         for (int i = 1; i < 3; i++) {
             String body = HttpRequest.get(bilibiliConstants.HOT_VIDEO_REQUEST + i).timeout(500).execute().body();
             JSONArray jsonArray = JSON.parseObject(body).getJSONObject("data").getJSONArray("list");
@@ -205,6 +205,7 @@ public class BilibiliRank {
                 videoRankCount++;
             }
         }
+        //log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
         if (bPopularDataService.saveBatch(videoRankList) &&
                 bVideoHistoryService.saveOrUpdateBatch(historyHashSet) &&
                 bAuthorBasedataService.saveOrUpdateBatch(basedataHashSet)

@@ -52,8 +52,4 @@ public class SysMenu {
      * */
     private List<SysMenu> children = new ArrayList<>();
 
-    /**
-     * 用于参数传递
-     * */
-    private String username;
 }
