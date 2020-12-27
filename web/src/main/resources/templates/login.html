@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/template :: header(~{::title},~{::link},~{::style})">
+<head th:replace="template :: header(~{::title},~{::link},~{::style})">
     <title>B-DATA</title>
-    <link rel="stylesheet" th:href="@{/x-data/css/login.css}">
-    <link rel="stylesheet" th:href="@{/x-data/css/iconfont.css}">
+    <link rel="stylesheet" th:href="@{x-data/css/login.css}">
+    <link rel="stylesheet" th:href="@{x-data/css/iconfont.css}">
 </head>
 <body class="layui-layout-login">
 <div class="login-bg">
@@ -40,7 +40,7 @@
         <div class="layui-layer-content"></div>
     </div>
 </div>
-<script th:replace="/template :: script"></script>
-<script th:src="@{/x-data/js/login.js}" type="text/javascript" charset="utf-8"></script>
+<script th:replace="template :: script"></script>
+<script th:src="@{x-data/js/login.js}" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

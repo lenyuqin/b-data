@@ -7,7 +7,6 @@
     "data": "/system/user/getUserMenu",
     "accordion": true,
     "control": false,
-    "async": true,
     "select": "1"
   },
   "tab": {
@@ -15,7 +14,7 @@
     "keepState": true,
     "tabMax": 30,
     "index": {
-      "id": "451003242072117248",
+      "id": "1",
       "href": "/console",
       "title": "首页"
     }

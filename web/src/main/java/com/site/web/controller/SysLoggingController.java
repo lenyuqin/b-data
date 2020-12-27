@@ -1,6 +1,5 @@
 package com.site.web.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.site.web.service.LoggingService;
 import com.site.web.web.base.BaseController;

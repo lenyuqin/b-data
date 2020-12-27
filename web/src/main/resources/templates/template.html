@@ -16,10 +16,10 @@
     <meta name="keywords" content="B-DATA"/>
 
 
-    <link rel="shortcut icon" th:href="@{/x-data/bilibili.ico}" type="image/x-icon">
-    <link rel="stylesheet" th:href="@{/x-data/css/font-awesome-4.7.0/css/font-awesome.min.css}" media="all">
-    <link rel="stylesheet" th:href="@{/x-data/layui/css/layui.css}" media="all">
-    <link rel="stylesheet" th:href="@{/x-data/css/main.css}" media="all">
+    <link rel="shortcut icon" th:href="@{x-data/bilibili.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{x-data/css/font-awesome-4.7.0/css/font-awesome.min.css}" media="all">
+    <link rel="stylesheet" th:href="@{x-data/layui/css/layui.css}" media="all">
+    <link rel="stylesheet" th:href="@{x-data/css/main.css}" media="all">
 
     <th:block th:if="${link != null}">
         <th:block th:replace="${link}"></th:block>
@@ -32,8 +32,8 @@
 
 <body>
 <th:block th:fragment="script">
-    <script th:src="@{/x-data/layui/layui.js}" charset="utf-8"></script>
-    <script th:src="@{/x-data/js/main.js}" charset="utf-8"></script>
+    <script th:src="@{x-data/layui/layui.js}" charset="utf-8"></script>
+    <script th:src="@{x-data/js/main.js}" charset="utf-8"></script>
 </th:block>
 </body>
 </html>

@@ -31,13 +31,11 @@ public class SysIndexController {
     private BHomePageDataService bHomePageDataService;
 
 
-
     /**
      * 返回首页访问量的数据，
      *
      * @return Result
      */
-
     @GetMapping("/return")
     public Result<HashMap<String, Integer>> indexReturn() {
         HashMap<String, Integer> map = new HashMap<>();

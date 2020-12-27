@@ -15,9 +15,11 @@ spring:
     timeout: 120m
   #thymeleaf解析
   thymeleaf:
+      prefix: classpath:/templates/
+      suffix:  .html
       enabled: true  #开启thymeleaf视图解析
       cache: false
-      mode: HTML
+      mode: LEGACYHTML5
      # prefix: classpath:/templates/  #前缀
       encoding: UTF-8
       servlet:
