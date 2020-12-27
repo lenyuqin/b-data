@@ -1,8 +1,10 @@
 package com.site.web.plugins.pvuv;
 
 import cn.hutool.core.date.DateUtil;
-import com.site.web.utils.http.IpUtil;
-import com.site.web.utils.redis.RedisUtil;
+import com.site.component.utils.http.IpUtil;
+import com.site.component.utils.pvuv.PvuvString;
+import com.site.component.utils.pvuv.PvuvUtils;
+import com.site.component.utils.redis.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -11,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 
 /**
  * @author lenyuqin
@@ -31,13 +32,13 @@ public class PvuvInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String ipAddr = IpUtil.getIpAddr(request);
         log.info("访问地址为=>" + ipAddr);
-        String key = PvuvString.PREFIX + DateUtil.format(DateUtil.date(), "yyyyMMdd");
-        if (redisUtil.hget("dailyCount", key) == null) {
-            redisUtil.hset("dailyCount", key, 1);
+        String key = PvuvUtils.getDailyKey();
+        if (redisUtil.hget(PvuvString.DAILY_COUNT, key) == null) {
+            redisUtil.hset(PvuvString.DAILY_COUNT, key, 1);
         } else {
-            redisUtil.hincr("dailyCount", key, 1);
+            redisUtil.hincr(PvuvString.DAILY_COUNT, key, 1);
         }
-        log.info("redis==>" + redisUtil.hget("dailyCount", key));
+        log.info("redis==>" + redisUtil.hget(PvuvString.DAILY_COUNT, key));
         redisUtil.pfadd(PvuvString.COUNT, ipAddr);
         return true;
     }

@@ -19,7 +19,7 @@ spring:
       suffix:  .html
       enabled: true  #开启thymeleaf视图解析
       cache: false
-      mode: LEGACYHTML5
+      mode: HTML
      # prefix: classpath:/templates/  #前缀
       encoding: UTF-8
       servlet:
@@ -87,7 +87,7 @@ logging:
   # 日 志 级 别
   level:
     # 日 志 包 配 置
-    com.site.*: DEBUG
+    com.site.*: info
 
 
 

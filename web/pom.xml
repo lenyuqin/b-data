@@ -14,28 +14,10 @@
     <properties>
         <!-- JDK 版本 -->
         <java.version>11</java.version>
-        <!-- apache 工 具 类 -->
-        <commons.lang3.version>3.10</commons.lang3.version>
-        <!-- apache io 工具类 -->
-        <commons.io.version>2.5</commons.io.version>
-        <!-- 分 页 工 具 类 -->
-        <pagehelper.version>1.2.10</pagehelper.version>
     </properties>
 
     <!-- 依 赖 管 理 -->
     <dependencies>
-        <!--        Apache 工 具 包-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons.lang3.version}</version>
-        </dependency>
-        <!--         IO 工具类-->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons.io.version}</version>
-        </dependency>
         <!-- 验 证 码 -->
         <dependency>
             <groupId>com.github.whvcse</groupId>
@@ -53,11 +35,10 @@
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>net.sourceforge.nekohtml </groupId>
-            <artifactId>nekohtml </artifactId>
-            <version>1.9.22 </version>
+            <groupId>com.site.component</groupId>
+            <artifactId>utils</artifactId>
+            <version>1.0</version>
         </dependency>
-
     </dependencies>
     <build>
         <finalName>b-data</finalName>

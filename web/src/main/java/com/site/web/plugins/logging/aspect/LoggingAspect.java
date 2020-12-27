@@ -3,7 +3,7 @@ package com.site.web.plugins.logging.aspect;
 import com.site.web.entity.Logging;
 import com.site.web.plugins.logging.enums.LoggingType;
 import com.site.web.plugins.logging.factory.LoggingFactory;
-import com.site.web.utils.sequence.SequenceUtil;
+import com.site.component.utils.sequence.SequenceUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

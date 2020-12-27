@@ -1,7 +1,7 @@
 package com.site.web.security.process;
 
 import com.alibaba.fastjson.JSON;
-import com.site.web.utils.servlet.ServletUtil;
+import com.site.component.utils.servlet.ServletUtil;
 import com.site.web.web.domain.response.Result;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

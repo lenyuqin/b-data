@@ -1,6 +1,6 @@
 package com.site.web.security.domain;
 
-import com.site.web.utils.redis.RedisUtil;
+import com.site.component.utils.redis.RedisUtil;
 import org.springframework.security.web.authentication.rememberme.PersistentRememberMeToken;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.stereotype.Component;

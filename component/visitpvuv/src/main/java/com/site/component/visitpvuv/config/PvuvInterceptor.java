@@ -1,8 +1,8 @@
 package com.site.component.visitpvuv.config;
 
 import cn.hutool.core.date.DateUtil;
-import com.site.component.utils.config.IpUtil;
-import com.site.component.utils.config.RedisUtil;
+import com.site.component.utils.http.IpUtil;
+import com.site.component.utils.redis.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

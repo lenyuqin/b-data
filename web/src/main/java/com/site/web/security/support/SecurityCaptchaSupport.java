@@ -1,8 +1,8 @@
 package com.site.web.security.support;
 
 import com.alibaba.fastjson.JSON;
-import com.site.web.utils.servlet.ServletUtil;
-import com.site.web.utils.text.StringUtils;
+import com.site.component.utils.servlet.ServletUtil;
+import com.site.component.utils.text.StringUtils;
 import com.site.web.web.domain.response.Result;
 import com.wf.captcha.utils.CaptchaUtil;
 import org.springframework.stereotype.Component;

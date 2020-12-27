@@ -32,6 +32,7 @@ import java.util.List;
 @Service // 2.开启多线程
 public class BilibiliRank {
 
+
     @Resource
     private BVideoRankService bVideoRankService;
     @Resource
@@ -126,14 +127,14 @@ public class BilibiliRank {
 
 
         //现在所有数据都有了
-        //boolean saveOrUpdateBatch = bVideoHistoryService.saveOrUpdateBatch(historyHashSet);
-        //boolean saveOrUpdateBatch1 = bAuthorBasedataService.saveOrUpdateBatch(bAuthorBaseDataHashSet);
+        bVideoHistoryService.saveOrUpdateBatch(historyHashSet);
+        bAuthorBasedataService.saveOrUpdateBatch(bAuthorBaseDataHashSet);
         log.info("videoRankList===========>" + videoRankList.size() + "   videoDataList=============>" + videoDataList.size());
         //90多秒，就离谱！！！，这么会要这么久啊
-        long currentTimeMillis = System.currentTimeMillis();
-        boolean saveBatch = bVideoRankService.saveBatch(videoRankList, 1500);
-        boolean saveBatch1 = bVideoDataService.saveBatch(videoDataList, 1500);
-        log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
+        //long currentTimeMillis = System.currentTimeMillis();
+        bVideoRankService.saveBatch(videoRankList, 1500);
+        bVideoDataService.saveBatch(videoDataList, 1500);
+        //log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
     }
 
 
@@ -141,8 +142,6 @@ public class BilibiliRank {
      * 这个是爬取热门数据，同样的，热门数据也是要存入历史数据中
      * 然后调用一个定时任务，进行测试一下
      */
-    //@Async
-    //@Scheduled(fixedDelay = 1000)
     public void getPopular() {
         HashSet<BVideoHistory> historyHashSet = new HashSet<>();
         HashSet<BAuthorBasedata> basedataHashSet = new HashSet<>();
@@ -216,11 +215,8 @@ public class BilibiliRank {
         }
     }
 
-    @Async
-    //@Scheduled(cron = "*/6 * * * * ?")
-    public void test() {
-        log.error("这是定时任务测试信息");
-    }
+
+    //定期将redis存入mysql中
 
 
 }
