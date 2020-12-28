@@ -30,8 +30,8 @@ public class ApplicationTests {
         //bilibiliRank.getVideoRanklist();
         //bilibiliRank.getPopular();
         //log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
-        BHomePageData one = bHomePageDataService.getOne(new QueryWrapper<BHomePageData>().lambda().select(BHomePageData::getBvTotalVisits).orderByDesc(BHomePageData::getBvDay).last("limit 1"));
+        //BHomePageData one = bHomePageDataService.getOne(new QueryWrapper<BHomePageData>().lambda().select(BHomePageData::getBvTotalVisits).orderByDesc(BHomePageData::getBvDay).last("limit 1"));
 
-        log.info(one.toString());
+        //log.info(one.toString());
     }
 }
