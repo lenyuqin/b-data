@@ -2,7 +2,8 @@ package com.site.component.utils.pvuv;
 
 import cn.hutool.core.date.DateUtil;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 /**
  * @author lenyuqin
@@ -20,7 +21,7 @@ public class PvuvUtils {
 
 
     public static Date getYesterday() {
-        return DateUtil.yesterday();
+        return DateUtil.yesterday().toSqlDate();
     }
 
 }

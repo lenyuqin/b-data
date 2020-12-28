@@ -72,7 +72,7 @@ public class SysUserController extends BaseController {
             return sysMenu;
         }).collect(Collectors.toList());
         List<SysMenu> sysMenus = toUserMenu(sysMenuList, "0");
-        sysMenus.forEach(System.out::println);
+        //sysMenus.forEach(System.out::println);
         return sysMenus;
     }
 

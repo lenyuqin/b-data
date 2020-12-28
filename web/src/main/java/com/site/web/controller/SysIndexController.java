@@ -66,7 +66,7 @@ public class SysIndexController {
         ArrayList<Long> pvuv = new ArrayList<>();
         ArrayList<String> date = new ArrayList<>();
         for (BHomePageData bHomePageData : list) {
-            pvuv.add(bHomePageData.getBvDayVisits());
+            pvuv.add(Long.valueOf(bHomePageData.getBvDayVisits()));
             date.add(String.valueOf(bHomePageData.getBvDay()));
         }
         map.put("date", date);

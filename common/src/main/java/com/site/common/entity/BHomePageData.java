@@ -17,7 +17,7 @@ public class BHomePageData implements Serializable {
     /**
      * 总访问量
      */
-    private Long bvTotalVisits;
+    private Integer bvTotalVisits;
 
     /**
      * 日期（按天算）
@@ -27,21 +27,21 @@ public class BHomePageData implements Serializable {
     /**
      * 当天访问量
      */
-    private Long bvDayVisits;
+    private Integer bvDayVisits;
 
     /**
      * 视频总数
      */
-    private Long bvTotalVideo;
+    private Integer bvTotalVideo;
 
     /**
      * up主总数
      */
-    private Long bvTotalUp;
+    private Integer bvTotalUp;
 
     /**
      * 历史访问量（不重复）
      */
-    private Long bvHistoryVisits;
+    private Integer bvHistoryVisits;
 
 }

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.site.common.entity.BHomePageData;
 import com.site.common.service.BHomePageDataService;
 import com.site.datasourse.getdata.BilibiliRank;
+import com.site.datasourse.getdata.QuartzTask;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,9 @@ public class ApplicationTests {
     private BilibiliRank bilibiliRank;
 
     @Resource
+    private QuartzTask quartzTask;
+
+    @Resource
     private BHomePageDataService bHomePageDataService;
 
     @Test
@@ -31,7 +35,7 @@ public class ApplicationTests {
         //bilibiliRank.getPopular();
         //log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
         //BHomePageData one = bHomePageDataService.getOne(new QueryWrapper<BHomePageData>().lambda().select(BHomePageData::getBvTotalVisits).orderByDesc(BHomePageData::getBvDay).last("limit 1"));
-
+        //quartzTask.redisToMysql();
         //log.info(one.toString());
     }
 }

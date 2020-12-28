@@ -63,17 +63,17 @@ public class QuartzTask {
     public void redisToMysql() {
         BHomePageData bHomePageData = new BHomePageData();
         log.info("这是定时任务=====>" + "将redis中的数据存入数据库中");
-        long DayVisits = 0;
+        int DayVisits = 0;
         if (redisUtil.hHasKey(PvuvString.DAILY_COUNT, PvuvUtils.getYesterdayKey())) {
-            DayVisits = (long) redisUtil.hget(PvuvString.DAILY_COUNT, PvuvUtils.getYesterdayKey());
+            DayVisits = (int) redisUtil.hget(PvuvString.DAILY_COUNT, PvuvUtils.getYesterdayKey());
         }
         BHomePageData bvTotalVisits = bHomePageDataService.getOne(new QueryWrapper<BHomePageData>().lambda().select(BHomePageData::getBvTotalVisits).orderByDesc(BHomePageData::getBvDay).last("limit 1"));
-        bHomePageData.setBvTotalVisits(bvTotalVisits.getBvTotalVisits()+DayVisits);
-        bHomePageData.setBvDay((Date) PvuvUtils.getYesterday());
+        bHomePageData.setBvTotalVisits(bvTotalVisits.getBvTotalVisits() + DayVisits);
+        bHomePageData.setBvDay(PvuvUtils.getYesterday());
         bHomePageData.setBvDayVisits(DayVisits);
-        bHomePageData.setBvTotalVideo((long) bVideoHistoryService.count());
-        bHomePageData.setBvTotalUp((long) bAuthorBasedataService.count());
-        bHomePageData.setBvHistoryVisits(redisUtil.pfcount(PvuvString.COUNT));
+        bHomePageData.setBvTotalVideo(bVideoHistoryService.count());
+        bHomePageData.setBvTotalUp(bAuthorBasedataService.count());
+        bHomePageData.setBvHistoryVisits((int) redisUtil.pfcount(PvuvString.COUNT));
         bHomePageDataService.save(bHomePageData);
     }
 
