@@ -1,9 +1,9 @@
 package com.site.web.plugins.system.domain;
 
+import com.site.common.web.base.BaseDomain;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.site.web.web.base.BaseDomain;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;

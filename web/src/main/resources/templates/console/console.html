@@ -308,7 +308,6 @@
             url: "/index_data",       //请求发送到TestServlet处
             dataType: "json",        //返回数据形式为json
             success: function (result) {
-                console.log(result);
                 //请求成功时执行该函数内容，result即为服务器返回的json对象
                 option.xAxis[0].data = result.data.date;
                 option.series[0].data = result.data.pvuv;

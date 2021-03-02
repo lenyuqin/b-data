@@ -23,21 +23,6 @@ public class BAuthorBasedata implements Serializable {
     private Long bvUpuuid;
 
     /**
-     * 作者的粉丝数量
-     */
-    private Long bvUpFollower;
-
-    /**
-     * 作者的总获得点赞数
-     */
-    private Long bvUpLikes;
-
-    /**
-     * 作者视频的总播放数
-     */
-    private Long bvUpView;
-
-    /**
      * 作者的头像
      */
     private String bvFaceUrl;

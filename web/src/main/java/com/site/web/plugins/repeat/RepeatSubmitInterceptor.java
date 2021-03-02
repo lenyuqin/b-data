@@ -1,8 +1,8 @@
 package com.site.web.plugins.repeat;
 
 import com.alibaba.fastjson.JSON;
+import com.site.common.web.response.Result;
 import com.site.web.plugins.repeat.annotation.RepeatSubmit;
-import com.site.web.web.domain.response.Result;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -34,7 +34,6 @@ public abstract class RepeatSubmitInterceptor extends HandlerInterceptorAdapter
                 if (this.isRepeatSubmit(request))
                 {
                     Result result = new Result();
-                    result.setSuccess(false);
                     result.setMsg("不允许重复提交，请稍后再试");
                     result.setCode(500);
                     response.setHeader("Content-type","application/json;charset=UTF-8");

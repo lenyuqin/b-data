@@ -7,7 +7,7 @@ server:
     # Session
     session:
       # 超 时 时 间
-      timeout: 120m
+      timeout: 200m
 
 # Spring 配置
 spring:
@@ -28,6 +28,8 @@ spring:
   profiles:
     # 运 行 环 境
     active: datasource
+  banner:
+    location: banner.txt
 
 # mybatis 配 置
 mybatis-plus:
@@ -59,9 +61,9 @@ pear:
         # 作 者
       name: lenyuqin
         # 连 接
-      url: www.com.pearadmin.cn
+      url: www.pearadmin.cn
         # 邮 箱
-      email: 1151475385@gmail.com
+      email: 1151475385@qq.com
 
   # 权 限 配 置
   security:
@@ -80,6 +82,8 @@ pear:
       - /component/** # 开放 静态资源
       - /favicon.ico # 开放 Logo
       - /x-data/**
+
+
 
 
 # logging 配置

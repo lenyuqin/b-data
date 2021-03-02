@@ -11,5 +11,11 @@
     <packaging>jar</packaging>
     <artifactId>log</artifactId>
 
-
+<dependencies>
+    <dependency>
+        <groupId>com.site.component</groupId>
+        <artifactId>utils</artifactId>
+        <version>1.0</version>
+    </dependency>
+</dependencies>
 </project>

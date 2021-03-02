@@ -2,11 +2,13 @@ package com.site.web.controller;
 
 import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.site.common.entity.BCarousel;
 import com.site.common.entity.BHomePageData;
+import com.site.common.service.BCarouselService;
 import com.site.common.service.BHomePageDataService;
+import com.site.common.web.response.Result;
 import com.site.component.utils.pvuv.PvuvString;
 import com.site.component.utils.redis.RedisUtil;
-import com.site.web.web.domain.response.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,9 @@ public class SysIndexController {
 
     @Resource
     private BHomePageDataService bHomePageDataService;
+
+    @Resource
+    private BCarouselService bCarouselService;
 
 
     /**
@@ -77,10 +82,16 @@ public class SysIndexController {
         String key = PvuvString.PREFIX + DateUtil.format(DateUtil.date(), "yyyyMMdd");
         map.put("visits", redisUtil.hget("dailyCount", key));
         hashMapResult.setCode(200);
-        hashMapResult.setSuccess(true);
         hashMapResult.setData(map);
         hashMapResult.setMsg("success");
         return hashMapResult;
+    }
+
+    @GetMapping("/carousel")
+    public Result<List<BCarousel>> getCarousel() {
+        Result<List<BCarousel>> result = new Result<>();
+        List<BCarousel> bCarouselList = bCarouselService.list(new QueryWrapper<BCarousel>().lambda().orderByDesc(BCarousel::getId).last("limit 5"));
+        return Result.success(bCarouselList);
     }
 
 

@@ -1,5 +1,7 @@
 package com.site.datasourse.getdata;
 
+import java.sql.Date;
+
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -9,19 +11,23 @@ import com.site.common.entity.*;
 import com.site.common.service.*;
 import com.site.datasourse.constants.Constants;
 import com.site.datasourse.constants.bilibiliConstants;
-import com.site.datasourse.utils.BVStringUtil;
+import com.site.component.utils.text.BVStringUtil;
 import com.site.datasourse.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.ListIterator;
 
 
 /**
@@ -43,7 +49,10 @@ public class BilibiliRank {
     private BAuthorBasedataService bAuthorBasedataService;
     @Resource
     private BPopularDataService bPopularDataService;
-
+    @Resource
+    private BOnlineService bOnlineService;
+    @Resource
+    private BCarouselService bCarouselService;
 
     /**
      * 爬取视频分区的排行榜,并保存数据库,这里由于视频数据很多，并且也要保存到视频数据中，一个是rank表，一个是history表，我这里热门需要
@@ -218,5 +227,62 @@ public class BilibiliRank {
 
     //定期将redis存入mysql中
 
+    /**
+     * 获取每小时的在线视频的数据 online-list
+     */
+    public void getOnlineVideoData() throws Exception {
+        List<BOnline> bOnlineArrayList = new ArrayList<>();
+        Document parse = Jsoup.parse(new URL(bilibiliConstants.ONLINE_URL), 5000);
+        Elements onlineList = parse.getElementsByClass("ebox");
+        Elements script = parse.getElementsByTag("script");
+        int flag = 0;
+        for (Element element : onlineList) {
+            String href = element.getElementsByTag("a").attr("href");
+            String title = element.getElementsByTag("a").attr("title");
+            String online = element.getElementsByTag("b").text();
+            String author = element.getElementsByClass("author").text();
+            String authorId = element.getElementsByClass("author").attr("href");
+            log.info(++flag + " href=>" + href.split(bilibiliConstants.ONLINE_URL_PREFIX)[1] + "   title==>" + title + "   online==>" + online + "   author==>" + author + "   authorId==>" + authorId);
+            BOnline bOnline = new BOnline();
+            bOnline.setBvRank(flag);
+            bOnline.setBvDate(DateUtils.getLocalCurrentDate());
+            bOnline.setBvNumber(href.split(bilibiliConstants.ONLINE_URL_PREFIX)[1]);
+            bOnline.setBvTitle(title);
+            bOnline.setBvOnline(Integer.valueOf(online));
+            bOnline.setBvAuthor(author);
+            bOnline.setBvUpuuid(BVStringUtil.filterNumber(authorId));
+            bOnline.setBvImg("");
+            bOnlineArrayList.add(bOnline);
+        }
+        if (bOnlineService.saveBatch(bOnlineArrayList)) {
+            log.info("在线视频数据保存成功");
+        } else {
+            log.error("在线视频数据保存失败");
+        }
+
+
+    }
+
+
+    public void getCarousel() throws Exception {
+        Document parse = Jsoup.parse(new URL(bilibiliConstants.MAIN_WEBSITE), 5000);
+        Elements elementsByClass = parse.getElementsByClass("van-slide").select(".item");
+        List<BCarousel> bCarouselArrayList = new ArrayList<>();
+        for (Element element : elementsByClass) {
+            String src = element.getElementsByTag("img").attr("src");
+            String alt = element.getElementsByTag("img").attr("alt");
+            BCarousel bCarousel = new BCarousel();
+            bCarousel.setId(0);
+            bCarousel.setDate(DateUtils.getLocalCurrentDate());
+            bCarousel.setUrl(src);
+            bCarousel.setTitle(alt);
+            bCarouselArrayList.add(bCarousel);
+        }
+        if (bCarouselService.saveBatch(bCarouselArrayList)) {
+            log.info("轮播图数据保存成功");
+        } else {
+            log.error("轮播图数据保存失败");
+        }
+    }
 
 }

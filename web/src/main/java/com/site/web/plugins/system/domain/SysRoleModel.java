@@ -1,6 +1,6 @@
 package com.site.web.plugins.system.domain;
 
-import com.site.web.web.base.BaseDomain;
+import com.site.common.web.base.BaseDomain;
 import lombok.Data;
 
 /**

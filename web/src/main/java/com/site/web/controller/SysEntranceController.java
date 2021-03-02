@@ -1,7 +1,7 @@
 package com.site.web.controller;
 
+import com.site.common.web.base.BaseController;
 import com.site.component.utils.security.SecurityUtil;
-import com.site.web.web.base.BaseController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +49,12 @@ public class SysEntranceController extends BaseController {
     @GetMapping("console")
     public ModelAndView home() {
         return JumpPage("console/console");
+    }
+
+
+    @GetMapping("console2")
+    public ModelAndView home2() {
+        return JumpPage("console/console2");
     }
 
     /**

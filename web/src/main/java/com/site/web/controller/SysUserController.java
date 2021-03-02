@@ -1,19 +1,21 @@
 package com.site.web.controller;
 
 import com.site.common.entity.BMenu;
+import com.site.common.entity.SysUser;
 import com.site.common.service.BMenuService;
+import com.site.common.service.SysUserService;
+import com.site.common.web.base.BaseController;
+import com.site.component.utils.security.SecurityUtil;
 import com.site.web.entity.SysMenu;
-import com.site.web.web.base.BaseController;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,6 +34,9 @@ public class SysUserController extends BaseController {
     @Resource
     private BMenuService bMenuService;
 
+    @Resource
+    private SysUserService sysUserService;
+
     /**
      * Describe: 基础路径
      */
@@ -49,13 +54,13 @@ public class SysUserController extends BaseController {
         return JumpPage(MODULE_PATH + "main");
     }
 
+
     /**
      * Describe: 获取用户列表数据
      * Param ModelAndView
      * todo 这个是分页 需要进行修改
      * Return 用户列表数据
      */
-
     @GetMapping("getUserMenu")
     public List<SysMenu> getUserMenu() {
         List<BMenu> bMenuList = bMenuService.list();
@@ -72,9 +77,23 @@ public class SysUserController extends BaseController {
             return sysMenu;
         }).collect(Collectors.toList());
         List<SysMenu> sysMenus = toUserMenu(sysMenuList, "0");
-        //sysMenus.forEach(System.out::println);
         return sysMenus;
     }
+
+
+    /**
+     * Describe: 跳转用户个人资料
+     * Param: null
+     * Return: ModelAndView
+     */
+    @GetMapping("center")
+    @ApiOperation(value = "个人资料")
+    public ModelAndView center(Model model) {
+        SysUser sysUser = (SysUser) SecurityUtil.currentUser().getPrincipal();
+        model.addAttribute("userInfo", sysUserService.getById(sysUser.getUserId()));
+        return JumpPage(MODULE_PATH + "center");
+    }
+
 
     /**
      * 递归获取菜单tree

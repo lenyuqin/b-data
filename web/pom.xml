@@ -18,12 +18,6 @@
 
     <!-- 依 赖 管 理 -->
     <dependencies>
-        <!-- 验 证 码 -->
-        <dependency>
-            <groupId>com.github.whvcse</groupId>
-            <artifactId>easy-captcha</artifactId>
-            <version>${captcha.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.site</groupId>
             <artifactId>common</artifactId>
@@ -39,11 +33,14 @@
             <artifactId>utils</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.site</groupId>
+            <artifactId>permission</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>b-data</finalName>
-
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

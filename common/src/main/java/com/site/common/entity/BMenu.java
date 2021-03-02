@@ -1,5 +1,6 @@
 package com.site.common.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class BMenu implements Serializable {
     /**
      * 菜单id
      */
+    @TableId
     private String id;
 
     /**

@@ -1,10 +1,10 @@
 package com.site.web.controller;
 
 
-import com.site.web.service.LoggingService;
-import com.site.web.web.base.BaseController;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+
+import com.site.common.web.base.BaseController;
+import com.site.log.service.LoggingService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +33,6 @@ public class SysLoggingController extends BaseController {
      * Return: ModelAndView
      */
     @GetMapping("main")
-    @PreAuthorize("hasPermission('/system/logging/main','sys:logging:main')")
     public ModelAndView main() {
         return JumpPage("system/logging/main");
     }

@@ -98,6 +98,8 @@ layui.define(['table', 'jquery', 'element', 'form', 'tab', 'menu', 'frame'],
 							$(".refresh a").removeClass("layui-icon-loading");
 						}, 600)
 					})
+
+
 					sideMenu.click(function(dom, data) {
 						bodyTab.addTabOnly({
 							id: data.menuId,

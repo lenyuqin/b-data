@@ -32,6 +32,8 @@
 	height: 40px;
 	overflow: hidden;
 	margin-bottom: 12px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .project-list-item .project-list-item-desc {

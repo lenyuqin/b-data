@@ -1,5 +1,6 @@
 package com.site.common.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class SysUserRole implements Serializable {
     /**
      * 标识
      */
+    @TableId
     private String id;
 
     /**

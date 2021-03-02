@@ -4,8 +4,10 @@ import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.site.common.entity.BHomePageData;
+import com.site.common.entity.BVideoData;
 import com.site.common.service.BAuthorBasedataService;
 import com.site.common.service.BHomePageDataService;
+import com.site.common.service.BVideoDataService;
 import com.site.common.service.BVideoHistoryService;
 import com.site.component.utils.pvuv.PvuvString;
 import com.site.component.utils.pvuv.PvuvUtils;
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.sql.Date;
+import java.util.List;
 
 /**
  * @author lenyuqin
@@ -27,18 +30,18 @@ import java.sql.Date;
 public class QuartzTask {
     @Resource
     private BilibiliRank bilibiliRank;
-
     @Resource
     private RedisUtil redisUtil;
-
     @Resource
     private BHomePageDataService bHomePageDataService;
-
     @Resource
     private BVideoHistoryService bVideoHistoryService;
-
     @Resource
     private BAuthorBasedataService bAuthorBasedataService;
+    @Resource
+    private BVideoDataService bVideoDataService;
+    @Resource
+    private BilibiliVideo bilibiliVideo;
 
 
     /**
@@ -77,5 +80,40 @@ public class QuartzTask {
         bHomePageDataService.save(bHomePageData);
     }
 
+    /**
+     * 每天3点执行一次，用于爬取全部数据的
+     * TODO 这里要改一下，到时候爬取接口，每四个小时爬取一次，不然真的效率太低了，还不如爬取接口来的快
+     */
+    @Async
+    @Scheduled(cron = "0 0 3/23 * * ? ")
+    public void getVideoData() throws Exception {
+        long l = System.currentTimeMillis();
+        List<BVideoData> list = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().groupBy(BVideoData::getBvNumber).having("COUNT(BV_NUMBER) < 7 "));
+        int flag = 0;
+        for (BVideoData bVideoData : list) {
+            bilibiliVideo.getVideoData(bVideoData);
+            log.info("flag=>" + flag++);
+        }
+        log.info("所用时间=====>" + (System.currentTimeMillis() - l));
+    }
+
+
+    /**
+     * 获取每小时的在线视频的数据
+     */
+    @Async
+    @Scheduled(cron = "0 0 0/1 * * ? ")
+    public void getOnlineVideoData() throws Exception {
+        bilibiliRank.getOnlineVideoData();
+    }
+
+    /**
+     * 每天获取b站的轮播图
+     */
+    @Async
+    @Scheduled(cron = "0 0 12 1/1 * ? ")
+    public void getPicture() {
+
+    }
 
 }

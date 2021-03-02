@@ -1,8 +1,8 @@
 package com.site.web.exception;
 
+import com.site.common.web.response.Result;
 import com.site.web.exception.base.BusinessException;
 import com.site.component.utils.servlet.ServletUtil;
-import com.site.web.web.domain.response.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;

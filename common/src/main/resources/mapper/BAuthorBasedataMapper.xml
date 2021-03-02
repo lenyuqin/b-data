@@ -3,10 +3,9 @@
 <mapper namespace="com.site.common.mapper.BAuthorBasedataMapper">
 
     <resultMap type="com.site.common.entity.BAuthorBasedata" id="BAuthorBasedataMap">
-        <result property="bvUpuuid" column="BV_UPUUID" jdbcType="INTEGER"/>
-        <result property="bvUpFollower" column="BV_UP_FOLLOWER" jdbcType="INTEGER"/>
-        <result property="bvUpLikes" column="BV_UP_LIKES" jdbcType="INTEGER"/>
-        <result property="bvUpView" column="BV_UP_VIEW" jdbcType="INTEGER"/>
+        <result property="bvUpuuid" column="bv_upuuid" jdbcType="INTEGER"/>
+        <result property="bvFaceUrl" column="bv_face_url" jdbcType="VARCHAR"/>
+        <result property="bvName" column="bv_name" jdbcType="VARCHAR"/>
     </resultMap>
 
 

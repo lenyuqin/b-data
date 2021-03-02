@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="referrer" content="never">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title> B-data </title>
@@ -84,10 +85,8 @@
 				image.onload = function(){
 					$(".layui-nav-img").attr("src", convert.imageToBase64(image));
 				}
-			
 				// 重新设置配置文件读取路径，默认为同级目录下的 pear.config.json
 				admin.setConfigPath("config/pear.config.yml");
-				
 				// Admin 框架初始化
 				admin.render();
 			})

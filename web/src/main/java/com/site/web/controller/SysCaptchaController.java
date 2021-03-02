@@ -1,9 +1,8 @@
 package com.site.web.controller;
 
-import com.site.web.web.base.BaseController;
-import com.site.web.web.domain.response.Result;
 
-
+import com.site.common.web.base.BaseController;
+import com.site.common.web.response.Result;
 import com.wf.captcha.utils.CaptchaUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

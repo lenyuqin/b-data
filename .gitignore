@@ -6,8 +6,8 @@ bdata/.mvn/
 bdata/mvnw
 bdata/mvnw.cmd
 
+*.log
 
-log/
 src/main/resources/static/test/
 src/main/resources/static/x-data/css/iconfont.css
 src/main/resources/templates/
