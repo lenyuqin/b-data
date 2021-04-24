@@ -15,7 +15,6 @@
         <!-- JDK 版本 -->
         <java.version>11</java.version>
     </properties>
-
     <!-- 依 赖 管 理 -->
     <dependencies>
         <dependency>

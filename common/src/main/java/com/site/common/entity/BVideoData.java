@@ -74,6 +74,7 @@ public class BVideoData implements Serializable {
     /**
      * 搜索视频的时间
      */
+
     private Date bvTime;
 
     /**

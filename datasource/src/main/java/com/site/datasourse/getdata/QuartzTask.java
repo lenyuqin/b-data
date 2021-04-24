@@ -1,8 +1,6 @@
 package com.site.datasourse.getdata;
 
-import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.site.common.entity.BHomePageData;
 import com.site.common.entity.BVideoData;
 import com.site.common.service.BAuthorBasedataService;
@@ -18,7 +16,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.sql.Date;
 import java.util.List;
 
 /**
@@ -112,8 +109,8 @@ public class QuartzTask {
      */
     @Async
     @Scheduled(cron = "0 0 12 1/1 * ? ")
-    public void getPicture() {
-
+    public void getPicture() throws Exception {
+        bilibiliRank.getCarousel();
     }
 
 }

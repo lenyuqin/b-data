@@ -67,4 +67,4 @@ links:
 ## 其他配置
 other: 
   ## 主页默认加载动画时长
-  keepLoad: "120"
+  keepLoad: "12000000000"

@@ -15,11 +15,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCaching
 @EnableScheduling   // 1.开启定时任务
 @EnableAsync        // 2.开启多线程
-@SpringBootApplication(scanBasePackages = {"com.site"},exclude = {DataSourceAutoConfiguration.class, SecurityAutoConfiguration.class})
+@SpringBootApplication(scanBasePackages = {"com.site"}, exclude = {DataSourceAutoConfiguration.class, SecurityAutoConfiguration.class})
 public class WebApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class, args);
     }
-
 }

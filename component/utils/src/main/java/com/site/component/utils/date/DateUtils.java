@@ -1,4 +1,4 @@
-package com.site.datasourse.utils;
+package com.site.component.utils.date;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

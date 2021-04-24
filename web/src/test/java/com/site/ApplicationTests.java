@@ -1,7 +1,6 @@
 package com.site;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.site.common.entity.BHomePageData;
 import com.site.common.entity.BVideoData;
 import com.site.common.service.BHomePageDataService;
 import com.site.common.service.BVideoDataService;
@@ -9,14 +8,14 @@ import com.site.datasourse.getdata.BilibiliRank;
 import com.site.datasourse.getdata.BilibiliUp;
 import com.site.datasourse.getdata.BilibiliVideo;
 import com.site.datasourse.getdata.QuartzTask;
-import com.site.datasourse.utils.DateUtils;
-import com.site.web.entity.Card;
 import com.site.web.service.CardService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -46,6 +45,7 @@ public class ApplicationTests {
     @Resource
     private CardService cardService;
 
+
     @Test
     void test1() {
         //List<BHomePageData> list = bHomePageDataService.list();
@@ -59,19 +59,24 @@ public class ApplicationTests {
 
     @Test
     void test2() throws Exception {
-        long l = System.currentTimeMillis();
-        List<BVideoData> list = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().groupBy(BVideoData::getBvNumber).having("COUNT(BV_NUMBER) < 7 "));
-        int flag = 0;
-        for (BVideoData bVideoData : list) {
-            bilibiliVideo.getVideoData(bVideoData);
-            log.info("flag=>" + flag++);
-        }
-        log.info("所用时间=====>" + (System.currentTimeMillis() - l));
+        //long l = System.currentTimeMillis();
+        //List<BVideoData> list = bVideoDataService.list(new QueryWrapper<BVideoData>().lambda().groupBy(BVideoData::getBvNumber).having("COUNT(BV_NUMBER) < 7 "));
+        //int flag = 0;
+        //for (BVideoData bVideoData : list) {
+        //    bilibiliVideo.getVideoData(bVideoData);
+        //    log.info("flag=>" + flag++);
+        //}
+        //log.info("所用时间=====>" + (System.currentTimeMillis() - l));
     }
 
     @Test
     void test3() throws Exception {
         //bilibiliRank.getOnlineVideoData();
-        bilibiliRank.getCarousel();
+        //bilibiliRank.getCarousel();
+        //bilibiliVideo.getVideoDataByHttp();
+    }
+
+    @Test
+    void test4() throws IOException {
     }
 }

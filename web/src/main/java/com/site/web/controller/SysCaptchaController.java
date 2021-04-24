@@ -27,6 +27,7 @@ public class SysCaptchaController extends BaseController {
      */
     @RequestMapping("generate")
     public void generate(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         CaptchaUtil.out(request, response);
     }
 

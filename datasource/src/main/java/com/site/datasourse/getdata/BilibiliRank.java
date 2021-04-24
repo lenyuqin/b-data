@@ -1,6 +1,5 @@
 package com.site.datasourse.getdata;
 
-import java.sql.Date;
 
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSON;
@@ -12,7 +11,7 @@ import com.site.common.service.*;
 import com.site.datasourse.constants.Constants;
 import com.site.datasourse.constants.bilibiliConstants;
 import com.site.component.utils.text.BVStringUtil;
-import com.site.datasourse.utils.DateUtils;
+import com.site.component.utils.date.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -21,13 +20,10 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.ListIterator;
 
 
 /**
@@ -146,7 +142,6 @@ public class BilibiliRank {
         //log.info("一共花了====>" + (System.currentTimeMillis() - currentTimeMillis));
     }
 
-
     /**
      * 这个是爬取热门数据，同样的，热门数据也是要存入历史数据中
      * 然后调用一个定时任务，进行测试一下
@@ -224,9 +219,6 @@ public class BilibiliRank {
         }
     }
 
-
-    //定期将redis存入mysql中
-
     /**
      * 获取每小时的在线视频的数据 online-list
      */
@@ -263,7 +255,9 @@ public class BilibiliRank {
 
     }
 
-
+    /**
+     * 获取轮播图
+     */
     public void getCarousel() throws Exception {
         Document parse = Jsoup.parse(new URL(bilibiliConstants.MAIN_WEBSITE), 5000);
         Elements elementsByClass = parse.getElementsByClass("van-slide").select(".item");
